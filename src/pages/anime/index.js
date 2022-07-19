@@ -3,25 +3,26 @@ import { GET_ANIME_LIST } from '../../queries/anime'
 import { useState } from 'react';
 import HomePoster from '../../components/HomePoster';
 import AnimeCard from '../../components/AnimeCard';
-import { AnimeCardContainer, Filler } from './styled';
+import { AnimeCardContainer, Filler, PaginationContainer } from './styled';
+import Pagination from '../../components/Pagination'
 
 const AnimePage = () => {
   const [query, setQuery] = useState({
     page: 1,
-    perPage: 10
+    perPage: 10,
   })
 
-  const { loading, data } = useQuery(GET_ANIME_LIST, {
+  const { loading, data, refetch } = useQuery(GET_ANIME_LIST, {
     variables: query
   })
 
-  if (loading) {
-    return (
-      <div>
-        Hello
-      </div>
-    )
-  }
+  // if (loading) {
+  //   return (
+  //     <div>
+  //       Loading Resource
+  //     </div>
+  //   )
+  // }
 
   if (data) {
     console.log(data.Page)
@@ -30,17 +31,30 @@ const AnimePage = () => {
   return (
     <div>
       <HomePoster />
-      <AnimeCardContainer>
-        {data.Page && data.Page.media.map((item, index) => {
-          return (
-            <AnimeCard
-              key={index}
-              title={item.title.romaji}
-              coverImage={item.coverImage.large}
+      {data &&
+        <>
+          <AnimeCardContainer>
+            {data.Page && data.Page.media.map((item, index) => {
+              return (
+                <AnimeCard
+                  key={index}
+                  title={item.title.romaji}
+                  coverImage={item.coverImage.large}
+                />
+              )
+            })}
+          </AnimeCardContainer>
+          <PaginationContainer>
+            <Pagination
+              count={data.Page.pageInfo.lastPage}
+              setQuery={setQuery}
+              query={query}
+              refetch={refetch}
+              page={query.page}
             />
-          )
-        })}
-      </AnimeCardContainer>
+          </PaginationContainer>
+        </>
+      }
       <Filler />
     </div>
   )

@@ -8,5 +8,12 @@ export const AnimeCardContainer = styled.div`
 `
 
 export const Filler = styled.div`
-  height: 200px
+  height: 100px
+`
+
+export const PaginationContainer = styled.div`
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
