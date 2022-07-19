@@ -9,7 +9,7 @@ import Pagination from '../../components/Pagination'
 const AnimeListPage = ({ page }) => {
   const [query, setQuery] = useState({
     page: 1,
-    perPage: 10,
+    perPage: 16,
   })
 
   const { data, refetch } = useQuery(GET_ANIME_LIST, {

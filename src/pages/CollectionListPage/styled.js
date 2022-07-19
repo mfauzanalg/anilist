@@ -16,7 +16,6 @@ export const ComponentContainer = styled.div`
 
 export const CollectionListContainer = styled.div`
   margin-top: 30px;
-  height: 70vh;
   overflow: auto;
   border-radius: 10px;
   display: flex;

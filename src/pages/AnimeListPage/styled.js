@@ -6,7 +6,7 @@ export const ComponentContainer = styled.div`
 export const AnimeCardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   margin: 0 15px;
 `
 

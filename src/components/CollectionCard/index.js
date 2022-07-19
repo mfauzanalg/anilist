@@ -4,7 +4,7 @@ const CollectionCard = ({ title }) => {
   return (
     <CollectionCardContainer>
       <ConverContainer>
-        <Cover src='https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx15-A4F2t0TgWoi4.png'></Cover>
+        <Cover src='https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114129-RLgSuh6YbeYx.jpg'></Cover>
       </ConverContainer>
       <TextContainer>
         <Title>

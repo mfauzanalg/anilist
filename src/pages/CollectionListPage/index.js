@@ -1,24 +1,28 @@
 import { CollectionListContainer, ComponentContainer, Title } from './styled'
 import CollectionCard from '../../components/CollectionCard'
-
+import { CollectionContext } from '../../context/CollectionContext'
+import { useContext } from 'react'
 
 const CollectionListPage = () => {
+  const { collections, addNewCollection } = useContext(CollectionContext)
+
+  const addCollection = () => {
+    addNewCollection('Saya')
+  }
+
   return (
     <ComponentContainer>
-      <Title>
+      <Title onClick={addCollection}>
         Collection List
       </Title>
       <CollectionListContainer>
-        <CollectionCard title={'Hello 1'} />
-        <CollectionCard title={'Hello 2'} />
-        <CollectionCard title={'Hello 3'} />
-        <CollectionCard title={'Hello 3'} />
-        <CollectionCard title={'Hello 3'} />
-        <CollectionCard title={'Hello 3'} />
-        <CollectionCard title={'Hello 3'} />
-        <CollectionCard title={'Hello 3'} />
-        <CollectionCard title={'Hello 3'} />
-        <CollectionCard title={'Hello 3'} />
+        {
+          collections && collections.map((col, index) => {
+            return (
+              <CollectionCard title={col.name} key={index} />
+            )
+          })
+        }
       </CollectionListContainer>
     </ComponentContainer>
   )
