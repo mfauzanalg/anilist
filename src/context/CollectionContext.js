@@ -6,7 +6,6 @@ export const CollectionProvider = (props) => {
   const [collections, setCollections] = useState(JSON.parse(localStorage.getItem('collections')) || [])
 
   useEffect(() => {
-    console.log(collections)
     localStorage.setItem('collections', JSON.stringify(collections))
   }, [collections])
 

@@ -3,7 +3,6 @@ import Pagination from '@mui/material/Pagination';
 const CustomPagination = ({ count, setQuery, query, page }) => {
 
   const onPaginationChange = (e, currentPage) => {
-    console.log(e, currentPage)
     const temp = { ...query }
     temp.page = currentPage
     setQuery(temp)

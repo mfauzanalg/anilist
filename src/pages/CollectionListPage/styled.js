@@ -12,6 +12,7 @@ export const ComponentContainer = styled.div`
   background-color: #141414;
   min-height: 100vh;
   background-image: linear-gradient(#a31515, transparent, transparent);
+  position: relative;
 `
 
 export const CollectionListContainer = styled.div`
@@ -20,5 +21,10 @@ export const CollectionListContainer = styled.div`
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
+`
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  margin-top: 5px;
 `
 
