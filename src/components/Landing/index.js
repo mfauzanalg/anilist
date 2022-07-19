@@ -1,11 +1,12 @@
 import { LandingComp } from './styled';
 import TabBar from '../TabBar';
-import AnimePage from '../../pages/Anime'
+import AnimeListPage from '../../pages/AnimeListPage'
+import CollectionListPage from '../../pages/CollectionListPage'
 
-const Landing = () => {
+const Landing = ({ page }) => {
   return (
     <LandingComp>
-      <AnimePage />
+      {page === 'anime' ? <AnimeListPage page={page} /> : <CollectionListPage page />}
       <TabBar />
     </LandingComp>
   )

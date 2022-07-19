@@ -27,4 +27,5 @@ export const TabBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5px 20px;
 `

@@ -1,5 +1,8 @@
 import styled from "@emotion/styled";
 
+export const ComponentContainer = styled.div`
+`
+
 export const AnimeCardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;

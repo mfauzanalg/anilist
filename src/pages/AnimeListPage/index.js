@@ -3,10 +3,10 @@ import { GET_ANIME_LIST } from '../../queries/anime'
 import { useState } from 'react';
 import HomePoster from '../../components/HomePoster';
 import AnimeCard from '../../components/AnimeCard';
-import { AnimeCardContainer, Filler, PaginationContainer } from './styled';
+import { AnimeCardContainer, ComponentContainer, Filler, PaginationContainer } from './styled';
 import Pagination from '../../components/Pagination'
 
-const AnimePage = () => {
+const AnimeListPage = ({ page }) => {
   const [query, setQuery] = useState({
     page: 1,
     perPage: 10,
@@ -16,12 +16,8 @@ const AnimePage = () => {
     variables: query
   })
 
-  if (data) {
-    console.log(data.Page)
-  }
-
   return (
-    <div>
+    <ComponentContainer>
       <HomePoster />
       {data &&
         <>
@@ -48,8 +44,8 @@ const AnimePage = () => {
         </>
       }
       <Filler />
-    </div>
+    </ComponentContainer>
   )
 }
 
-export default AnimePage
+export default AnimeListPage
