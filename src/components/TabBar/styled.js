@@ -20,4 +20,3 @@ export const TabBarItem = styled.div`
   align-items: center;
   font-size: 14px;
 `
-

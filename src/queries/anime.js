@@ -34,8 +34,10 @@ export const GET_ANIME_LIST = gql`
 `
 
 export const GET_ONE_ANIME = gql`
-  query {
-    Media (type: ANIME) {
+  query (
+    $id: Int
+  ) {
+    Media (type: ANIME, id: $id) {
       title {
         romaji
         english
