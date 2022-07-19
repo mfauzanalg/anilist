@@ -12,17 +12,9 @@ const AnimePage = () => {
     perPage: 10,
   })
 
-  const { loading, data, refetch } = useQuery(GET_ANIME_LIST, {
+  const { data, refetch } = useQuery(GET_ANIME_LIST, {
     variables: query
   })
-
-  // if (loading) {
-  //   return (
-  //     <div>
-  //       Loading Resource
-  //     </div>
-  //   )
-  // }
 
   if (data) {
     console.log(data.Page)

@@ -8,16 +8,23 @@ export const TabBarComp = styled.div`
   bottom: 0;
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  border-top: 0.5px solid gray;
+  // border-top: 0.5px solid gray;
   z-index: 999;
-  opacity: 0.98;
+  opacity: 0.95;
 `
 
-export const TabBarItem = styled.div`
+export const TabBarText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 10px;
+  margin-top: 5px;
+`
+
+export const TabBarContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
