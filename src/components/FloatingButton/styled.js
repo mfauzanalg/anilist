@@ -13,4 +13,5 @@ export const ButtonContainer = styled.div`
   position: fixed;
   bottom: 100px;
   right: 50px;
+  cursor: pointer;
 `
