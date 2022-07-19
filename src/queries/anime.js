@@ -32,3 +32,23 @@ export const GET_ANIME_LIST = gql`
     }
   }
 `
+
+export const GET_ONE_ANIME = gql`
+  query {
+    Media (type: ANIME) {
+      title {
+        romaji
+        english
+        native
+      }
+      genres
+      coverImage {
+        extraLarge
+        large
+        medium
+        color
+      }
+      bannerImage
+    }
+  }
+`
