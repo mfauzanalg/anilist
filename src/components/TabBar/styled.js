@@ -11,6 +11,8 @@ export const TabBarComp = styled.div`
   justify-content: space-around;
   align-items: center;
   border-top: 0.5px solid gray;
+  z-index: 999;
+  opacity: 0.98;
 `
 
 export const TabBarItem = styled.div`

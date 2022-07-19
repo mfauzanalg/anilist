@@ -56,3 +56,7 @@ export const PosterGenreContainer = styled.div`
   display: flex;
   justify-content: center;
 `
+
+export const Filler = styled.div`
+  height: 48vh
+`

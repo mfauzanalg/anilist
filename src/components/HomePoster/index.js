@@ -1,6 +1,6 @@
 import { GET_ONE_ANIME } from '../../queries/anime';
 import { useQuery } from '@apollo/client';
-import { BottomShadow, ImageContainer, Poster, PosterContainer, PosterGenre, PosterGenreContainer, PosterTitle, TopShadow } from './styled';
+import { BottomShadow, Filler, ImageContainer, Poster, PosterContainer, PosterGenre, PosterGenreContainer, PosterTitle, TopShadow } from './styled';
 import { useState, useEffect } from 'react';
 
 const HomePoster = () => {
@@ -13,7 +13,6 @@ const HomePoster = () => {
   useEffect(() => {
     if (data) {
       setPoster(data.Media)
-      console.log(data.Media)
     }
   }, [data])
 
@@ -39,6 +38,7 @@ const HomePoster = () => {
             </PosterGenreContainer>
           </PosterTitle>
         </PosterContainer>
+        <Filler />
       </div>
     )
   }

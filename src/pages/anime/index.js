@@ -1,15 +1,17 @@
 import { useQuery } from '@apollo/client';
-import { GET_ANIME_LIST } from './queries/anime';
+import { GET_ANIME_LIST } from '../../queries/anime'
 import { useState } from 'react';
-import Button from './components/Test'
+import HomePoster from '../../components/HomePoster';
+import AnimeCard from '../../components/AnimeCard';
+import { AnimeCardContainer, Filler } from './styled';
 
-const Anime = () => {
+const AnimePage = () => {
   const [query, setQuery] = useState({
     page: 1,
     perPage: 10
   })
 
-  const { loading, error, data, refetch } = useQuery(GET_ANIME_LIST, {
+  const { loading, data } = useQuery(GET_ANIME_LIST, {
     variables: query
   })
 
@@ -22,24 +24,26 @@ const Anime = () => {
   }
 
   if (data) {
-    console.log(data)
-  }
-
-  if (error) {
-    console.log(error)
-  }
-
-  const doRefecth = () => {
-    console.log("WOW")
-    setQuery({ ...query, page: query.page + 1 })
-    refetch()
+    console.log(data.Page)
   }
 
   return (
-    <Button>
-      Oke
-    </Button >
+    <div>
+      <HomePoster />
+      <AnimeCardContainer>
+        {data.Page && data.Page.media.map((item, index) => {
+          return (
+            <AnimeCard
+              key={index}
+              title={item.title.romaji}
+              coverImage={item.coverImage.large}
+            />
+          )
+        })}
+      </AnimeCardContainer>
+      <Filler />
+    </div>
   )
 }
 
-export default Anime
+export default AnimePage

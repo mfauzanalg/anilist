@@ -1,11 +1,11 @@
-import LandingComp from './styled';
+import { LandingComp } from './styled';
 import TabBar from '../TabBar';
-import HomePoster from '../HomePoster';
+import AnimePage from '../../pages/Anime'
 
 const Landing = () => {
   return (
     <LandingComp>
-      <HomePoster />
+      <AnimePage />
       <TabBar />
     </LandingComp>
   )
