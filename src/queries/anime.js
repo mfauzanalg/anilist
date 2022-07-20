@@ -51,6 +51,7 @@ export const GET_ONE_ANIME = gql`
         color
       }
       bannerImage
+      description
     }
   }
 `

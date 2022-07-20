@@ -28,6 +28,7 @@ const AnimeListPage = ({ page }) => {
                   key={index}
                   title={item.title.romaji}
                   coverImage={item.coverImage.large}
+                  id={item.id}
                 />
               )
             })}

@@ -18,7 +18,7 @@ const HomePoster = () => {
 
   if (poster) {
     return (
-      <div>
+      <>
         <PosterContainer>
           <ImageContainer>
             <Poster
@@ -40,7 +40,7 @@ const HomePoster = () => {
           </PosterTitle>
         </PosterContainer>
         <Filler />
-      </div>
+      </>
     )
   }
 }

@@ -1,10 +1,9 @@
-import { TabBarComp, TabBarContainer, TabBarText } from "./styled"
+import { TabBarComp, TabBarContainer, TabBarText } from './styled'
 import MovieIcon from '@mui/icons-material/Movie';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const TabBarItem = ({ Icon, text, link }) => {
-
   const navigate = useNavigate();
 
   const onClick = () => {
