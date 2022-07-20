@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 const HomePoster = () => {
   const [poster, setPoster] = useState();
 
-  const { loading, error, data } = useQuery(GET_ONE_ANIME, {
+  const { data } = useQuery(GET_ONE_ANIME, {
     variables: { id: 1 }
   })
 
@@ -23,6 +23,7 @@ const HomePoster = () => {
           <ImageContainer>
             <Poster
               src={poster?.coverImage?.extraLarge}
+              // src={poster?.bannerImage}
               alt='Poster'
             />
           </ImageContainer>

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const AnimeCardContainer = styled.div`
   width: 150px;
-  margin: 10px 8px;
+  margin: 5px 8px;
   position: relative;
 `
 

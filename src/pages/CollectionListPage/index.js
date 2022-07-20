@@ -1,19 +1,18 @@
-import { CollectionListContainer, ComponentContainer, Title } from './styled'
+import { ButtonContainer, CollectionListContainer, ComponentContainer, Title } from './styled'
 import CollectionCard from '../../components/CollectionCard'
 import { CollectionContext } from '../../context/CollectionContext'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import FloatingButton from '../../components/FloatingButton'
+import Modal from '../../components/Modal'
+import Button from '../../components/Button'
 
 const CollectionListPage = () => {
   const { collections, addNewCollection } = useContext(CollectionContext)
-
-  const addCollection = () => {
-    addNewCollection('Saya')
-  }
+  const [isOpenCreateModal, setIsOpenCreateModal] = useState(false);
 
   return (
     <ComponentContainer>
-      <Title onClick={addCollection}>
+      <Title>
         Collection List
       </Title>
       <CollectionListContainer>
@@ -25,7 +24,20 @@ const CollectionListPage = () => {
           })
         }
       </CollectionListContainer>
-      <FloatingButton />
+      <FloatingButton onClick={() => setIsOpenCreateModal(true)} />
+
+      {/* Modals */}
+      <Modal title='Create New Collection' open={isOpenCreateModal} setOpen={setIsOpenCreateModal}>
+        <ButtonContainer>
+          <Button type={'secondary'} onClick={() => console.log('a')}>
+            Cancel
+          </Button>
+          <Button type={'primary'} onClick={() => console.log('b')}>
+            Create
+          </Button>
+        </ButtonContainer>
+      </Modal>
+
     </ComponentContainer>
   )
 }
