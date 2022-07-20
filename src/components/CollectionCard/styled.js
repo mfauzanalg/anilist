@@ -14,7 +14,7 @@ export const CollectionCardContainer = styled.div`
   display: flex;
   overflow: hidden;
   align-items: center;
-  curson: pointer;
+  cursor: pointer;
 `
 
 export const Cover = styled.img`

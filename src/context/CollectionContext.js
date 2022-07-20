@@ -12,7 +12,7 @@ export const CollectionProvider = (props) => {
 
   const isDuplicate = (newName) => {
     for (let i = 0; i < collections.length; i++) {
-      if (newName === collections[i].name) return true
+      if (newName.toLowerCase() === collections[i].name.toLowerCase()) return true
     }
     return false
   }
@@ -42,8 +42,22 @@ export const CollectionProvider = (props) => {
     }
   }
 
+  const deleteCollection = (name) => {
+    const idx = collections.findIndex(collection => collection.name === name)
+    if (idx > -1) {
+      const temp = [...collections]
+      temp.splice(idx, 1)
+      setCollections(temp)
+    }
+    else {
+      return 'Collection not found'
+    }
+
+    return null
+  }
+
   return (
-    <CollectionContext.Provider value={{ collections, addNewCollection }}>
+    <CollectionContext.Provider value={{ collections, addNewCollection, deleteCollection }}>
       {props.children}
     </CollectionContext.Provider>
   )
