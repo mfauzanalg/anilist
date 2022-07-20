@@ -104,3 +104,28 @@ export const Subtitle = styled.div`
 export const CollectionList = styled.div`
   display: flex;
 `
+
+export const ContentModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-height: 200px;
+  overflow: auto;
+  flex-wrap: no-wrap;
+`
+
+export const CheckboxContainer = styled.div`
+  display: flex;
+  padding-left: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  
+`
+
+export const Checkbox = styled.input`
+  width: 20px;
+  height: 20px;
+`
+
+export const CheckboxLabel = styled.div`
+  margin-left: 10px;
+`

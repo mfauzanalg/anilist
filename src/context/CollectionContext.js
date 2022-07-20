@@ -62,8 +62,37 @@ export const CollectionProvider = (props) => {
     return null
   }
 
+  const addAnimeToCollection = (anime, collection) => {
+    const collectionIdx = collections.findIndex(coll => coll.name === collection)
+    if (collectionIdx !== -1) {
+      const animeIdx = collections[collectionIdx].animeList.findIndex(anim => anim.id === anime.id)
+      if (animeIdx === -1) {
+        const temp = [...collections]
+        temp[collectionIdx].animeList.push(anime)
+        setCollections(temp);
+      }
+    }
+  }
+
+  const isCollectionContained = (collection, animeId) => {
+    const animeIdx = collection.animeList.findIndex(anim => anim.id === animeId)
+    if (animeIdx === -1) {
+      return false
+    }
+    else {
+      return true
+    }
+  }
+
   return (
-    <CollectionContext.Provider value={{ collections, addNewCollection, deleteCollection, getCollectionByName }}>
+    <CollectionContext.Provider value={{
+      collections,
+      addNewCollection,
+      deleteCollection,
+      getCollectionByName,
+      addAnimeToCollection,
+      isCollectionContained
+    }}>
       {props.children}
     </CollectionContext.Provider>
   )

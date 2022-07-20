@@ -2,6 +2,6 @@ import styled from '@emotion/styled'
 
 export const ButtonContainer = styled.div`
   display: flex;
-  margin-top: 5px;
+  margin-top: 15px;
   justify-content: space-between;
 `
