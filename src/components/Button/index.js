@@ -1,16 +1,10 @@
-import { PrimaryButton, SecondaryButton } from './styled';
+import { CustomButton } from './styled';
 
-const Button = ({ type, children, onClick }) => {
-  if (type === 'primary') {
-    return <PrimaryButton onClick={onClick}>
-      {children}
-    </PrimaryButton>
-  }
-  else {
-    return <SecondaryButton onClick={onClick}>
-      {children}
-    </SecondaryButton>
-  }
+const Button = ({ type, children, onClick, size }) => {
+  return <CustomButton type={type} size={size} onClick={onClick}>
+    {children}
+  </CustomButton>
 }
+
 
 export default Button;

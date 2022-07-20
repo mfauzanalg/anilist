@@ -1,25 +1,14 @@
 import styled from '@emotion/styled'
 
-export const PrimaryButton = styled.div`
+export const CustomButton = styled.div`
   cursor: pointer;
   padding: 10px;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
-  background-color: #a31515;
-  color: white;
-  width: 48%;
   text-align: center;
-`
-
-export const SecondaryButton = styled.div`
-  cursor: pointer;
-  border: 1px solid #a31515;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: white;
-  width: 48%;
-  text-align: center;
+  border: ${props => (props.type === 'primary' ? '' : '1px solid #a31515')};
+  background-color: ${props => (props.type === 'primary' ? '#a31515' : 'white')};
+  color: ${props => (props.type === 'primary' ? 'white' : 'black')};
+  width: ${props => (props.size ? `${props.size}%` : '')}
 `

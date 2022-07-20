@@ -5,7 +5,7 @@ export const BoxModal = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 60%;
   background: white;
   padding: 15px;
   border-radius: 8px;
@@ -20,7 +20,7 @@ export const Title = styled.div`
 
 export const Text = styled.div`
   font-size: 14px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 `
 
 export const ChildrenContainer = styled.div`

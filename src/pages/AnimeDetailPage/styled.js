@@ -5,6 +5,7 @@ export const PageContainer = styled.div`
   color: white;
   min-height: 100vh;
 `
+
 export const BannerContainer = styled.div`
   width: 100%;
   height: 200px;
@@ -46,25 +47,36 @@ export const ContentContainer = styled.div`
   margin-top: 90px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 `
 
 export const Title = styled.div`
   font-weight: bold;
-  font-size: 40px;
+  font-size: 36px;
 `
 
 export const PosterGenre = styled.div`
-  font-size: 16px;
-  margin-right: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 7px 0;
+  padding: 3px 10px;
+  // border: 1px solid #a31515;
+  background: white;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 0;
+  color: #a31515;
 `
 
 export const GenreContainer = styled.div`
   display: flex;
   margin-top: 10px;
+  max-width: 100%;
+  flex-wrap: wrap;
 `
 
 export const DescriptionContainer = styled.div`
-  margin-top: 30px;
+  margin-top: 20px;
   border-radius: 10px;
   padding: 30px;
   margin-bottom: 30px;
@@ -72,4 +84,23 @@ export const DescriptionContainer = styled.div`
   max-height: 300px;
   overflow: auto;
   background: rgb(212, 212, 212, 0.5);
+`
+export const CollectionListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const CollectionHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const Subtitle = styled.div`
+  font-weight: bold;
+  font-size: 20px;
+`
+
+export const CollectionList = styled.div`
+  display: flex;
 `

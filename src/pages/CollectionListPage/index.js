@@ -54,10 +54,10 @@ const CollectionListPage = () => {
           <Input placeholder={'Collection Name'} value={collectionName} onChange={onNameChange} />
         </InputContainer>
         <ButtonContainer>
-          <Button type={'secondary'} onClick={() => setIsOpenCreateModal(false)}>
+          <Button type={'secondary'} size={48} onClick={() => setIsOpenCreateModal(false)}>
             Cancel
           </Button>
-          <Button type={'primary'} onClick={() => handleNewCollection(collectionName)}>
+          <Button type={'primary'} size={48} onClick={() => handleNewCollection(collectionName)}>
             Create
           </Button>
         </ButtonContainer>

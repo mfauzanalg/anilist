@@ -52,12 +52,18 @@ export const CollectionProvider = (props) => {
     else {
       return 'Collection not found'
     }
+    return null
+  }
 
+  const getCollectionByName = (name) => {
+    for (let i = 0; i < collections.length; i++) {
+      if (name.toLowerCase() === collections[i].name.toLowerCase()) return collections[i]
+    }
     return null
   }
 
   return (
-    <CollectionContext.Provider value={{ collections, addNewCollection, deleteCollection }}>
+    <CollectionContext.Provider value={{ collections, addNewCollection, deleteCollection, getCollectionByName }}>
       {props.children}
     </CollectionContext.Provider>
   )

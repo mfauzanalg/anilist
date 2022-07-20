@@ -3,8 +3,11 @@ import { CollectionCardContainer, ConverContainer, Cover, Delete, OuterContainer
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ConfirmationModal from '../Modal/ConfirmationModal';
 import { CollectionContext } from '../../context/CollectionContext'
+import { useNavigate } from 'react-router-dom';
+
 
 const CollectionCard = ({ attr }) => {
+  const navigate = useNavigate()
   const { deleteCollection } = useContext(CollectionContext)
   const [isOpenDialog, setIsOpenDialog] = useState(false);
   const handleDeleteMondal = () => {
@@ -21,9 +24,13 @@ const CollectionCard = ({ attr }) => {
     }
   }
 
+  const handleCardClick = () => {
+    navigate(`/collection/${attr.name}`)
+  }
+
   return (
     <OuterContainer>
-      <CollectionCardContainer>
+      <CollectionCardContainer onClick={handleCardClick}>
         <ConverContainer>
           <Cover src={`${attr.cover}`} />
         </ConverContainer>

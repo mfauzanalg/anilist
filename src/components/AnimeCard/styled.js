@@ -4,6 +4,7 @@ export const AnimeCardContainer = styled.div`
   width: 150px;
   margin: 5px 8px;
   position: relative;
+  cursor: pointer;
 `
 
 export const AnimePosterContainer = styled.div`
