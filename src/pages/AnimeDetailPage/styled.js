@@ -94,15 +94,18 @@ export const CollectionHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
 `
 
 export const Subtitle = styled.div`
   font-weight: bold;
   font-size: 20px;
+  margin-right: 20px;
 `
 
 export const CollectionList = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `
 
 export const ContentModalContainer = styled.div`

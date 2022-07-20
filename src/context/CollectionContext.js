@@ -32,7 +32,7 @@ export const CollectionProvider = (props) => {
       temp.push({
         name: name,
         animeList: [],
-        cover: 'empty4.jpeg',
+        cover: `${process.env.PUBLIC_URL}/empty4.jpeg`,
       })
       setCollections(temp);
       return null
@@ -84,6 +84,16 @@ export const CollectionProvider = (props) => {
     }
   }
 
+  const animeHasCollection = (animeId) => {
+    const result = [];
+    collections.forEach(coll => {
+      if (isCollectionContained(coll, animeId)) {
+        result.push(coll)
+      }
+    })
+    return result
+  }
+
   return (
     <CollectionContext.Provider value={{
       collections,
@@ -91,7 +101,8 @@ export const CollectionProvider = (props) => {
       deleteCollection,
       getCollectionByName,
       addAnimeToCollection,
-      isCollectionContained
+      isCollectionContained,
+      animeHasCollection
     }}>
       {props.children}
     </CollectionContext.Provider>

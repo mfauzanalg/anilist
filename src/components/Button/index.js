@@ -1,7 +1,7 @@
 import { CustomButton } from './styled';
 
-const Button = ({ type, children, onClick, size }) => {
-  return <CustomButton type={type} size={size} onClick={onClick}>
+const Button = ({ type, children, onClick, size, font }) => {
+  return <CustomButton font={font} type={type} size={size} onClick={onClick}>
     {children}
   </CustomButton>
 }

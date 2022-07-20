@@ -23,17 +23,23 @@ import React from 'react';
 import { GET_ONE_ANIME } from '../../queries/anime';
 import { useQuery } from '@apollo/client';
 import { useLocation } from 'react-router-dom';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { CollectionContext } from '../../context/CollectionContext';
 import Button from '../../components/Button';
 import ConfirmationModal from '../../components/Modal/ConfirmationModal';
-
+import CollectionCard from '../../components/CollectionCard'
 
 const AnimeDetailPage = () => {
   const location = useLocation();
-  const { collections, addAnimeToCollection, isCollectionContained } = useContext(CollectionContext)
+  const {
+    collections,
+    addAnimeToCollection,
+    isCollectionContained,
+    animeHasCollection
+  } = useContext(CollectionContext)
   const [isOpenDialog, setIsOpenDialog] = useState(false)
   const [checkedItem, setChecked] = useState(new Array(collections.length).fill(false))
+  const [animeCollection, setAnimeCollection] = useState([]);
 
   const getID = (pathname) => {
     const splitted = pathname.split('/')
@@ -43,6 +49,11 @@ const AnimeDetailPage = () => {
   const { data } = useQuery(GET_ONE_ANIME, {
     variables: { id: getID(location.pathname) }
   })
+
+  useEffect(() => {
+    const animCol = animeHasCollection(parseInt(getID(location.pathname)))
+    setAnimeCollection(animCol)
+  }, [animeHasCollection, location.pathname, collections])
 
   const handleOnChange = (index) => {
     const temp = [...checkedItem]
@@ -87,14 +98,16 @@ const AnimeDetailPage = () => {
               <CollectionListContainer>
                 <CollectionHeader>
                   <Subtitle>
-                    Collection List :
+                    Collection List
                   </Subtitle>
-                  <Button type={'primary'} onClick={() => { setIsOpenDialog(true) }}>
-                    Add to Collection
+                  <Button type={'primary'} font={'14px'} onClick={() => { setIsOpenDialog(true) }}>
+                    Add
                   </Button>
                 </CollectionHeader>
                 <CollectionList>
-                  Hello
+                  {animeCollection.map((coll, index) => {
+                    return <CollectionCard key={index} attr={coll} />
+                  })}
                 </CollectionList>
               </CollectionListContainer>
             </ContentContainer>
