@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
 
+export const OuterContainer = styled.div`
+  position: relative;
+  width: 100%;
+`
+
 export const CollectionCardContainer = styled.div`
   width: 100%;
   height: 100px;
@@ -9,6 +14,7 @@ export const CollectionCardContainer = styled.div`
   display: flex;
   overflow: hidden;
   align-items: center;
+  curson: pointer;
 `
 
 export const Cover = styled.img`
@@ -31,4 +37,19 @@ export const TextContainer = styled.div`
 export const Title = styled.div`
   font-size: 20px;
   widht: 100%;
+`
+
+export const Delete = styled.div`
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  position: absolute;
+  background: #a31515;
+  border: 0.5px solid black;
+  right: -10px;
+  top: -10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
