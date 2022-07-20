@@ -1,14 +1,31 @@
-import { ButtonContainer, CollectionListContainer, ComponentContainer, Title } from './styled'
+import { ButtonContainer, CollectionListContainer, ComponentContainer, Title, InputContainer } from './styled'
 import CollectionCard from '../../components/CollectionCard'
 import { CollectionContext } from '../../context/CollectionContext'
 import { useContext, useState } from 'react'
 import FloatingButton from '../../components/FloatingButton'
 import Modal from '../../components/Modal'
 import Button from '../../components/Button'
+import Input from '../../components/Input'
 
 const CollectionListPage = () => {
   const { collections, addNewCollection } = useContext(CollectionContext)
   const [isOpenCreateModal, setIsOpenCreateModal] = useState(false);
+  const [collectionName, setCollectionName] = useState('');
+
+  const onNameChange = (e) => {
+    setCollectionName(e.target.value)
+  }
+
+  const handleNewCollection = (name) => {
+    const err = addNewCollection(name)
+    if (err) {
+      alert(err)
+    }
+    else {
+      setIsOpenCreateModal(false);
+      setCollectionName('');
+    }
+  }
 
   return (
     <ComponentContainer>
@@ -17,9 +34,9 @@ const CollectionListPage = () => {
       </Title>
       <CollectionListContainer>
         {
-          collections && collections.map((col, index) => {
+          collections && collections.map((collection, index) => {
             return (
-              <CollectionCard title={col.name} key={index} />
+              <CollectionCard attr={collection} key={index} />
             )
           })
         }
@@ -27,12 +44,20 @@ const CollectionListPage = () => {
       <FloatingButton onClick={() => setIsOpenCreateModal(true)} />
 
       {/* Modals */}
-      <Modal title='Create New Collection' open={isOpenCreateModal} setOpen={setIsOpenCreateModal}>
+      <Modal
+        title='Create New Collection'
+        text='Collection name must be unique and does not contain special char'
+        open={isOpenCreateModal}
+        setOpen={setIsOpenCreateModal}
+      >
+        <InputContainer>
+          <Input placeholder={'Collection Name'} value={collectionName} onChange={onNameChange} />
+        </InputContainer>
         <ButtonContainer>
-          <Button type={'secondary'} onClick={() => console.log('a')}>
+          <Button type={'secondary'} onClick={() => setIsOpenCreateModal(false)}>
             Cancel
           </Button>
-          <Button type={'primary'} onClick={() => console.log('b')}>
+          <Button type={'primary'} onClick={() => handleNewCollection(collectionName)}>
             Create
           </Button>
         </ButtonContainer>

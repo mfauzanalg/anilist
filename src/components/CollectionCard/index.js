@@ -1,14 +1,14 @@
 import { CollectionCardContainer, ConverContainer, Cover, TextContainer, Title } from './styled'
 
-const CollectionCard = ({ title }) => {
+const CollectionCard = ({ title, attr }) => {
   return (
     <CollectionCardContainer>
       <ConverContainer>
-        <Cover src='https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114129-RLgSuh6YbeYx.jpg'></Cover>
+        <Cover src={`${attr.cover}`} />
       </ConverContainer>
       <TextContainer>
         <Title>
-          {title}
+          {attr.name}
         </Title>
       </TextContainer>
     </CollectionCardContainer>

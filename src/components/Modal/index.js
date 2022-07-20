@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Modal from '@mui/material/Modal';
-import { BoxModal, ChildrenContainer, Title } from './styled';
+import { BoxModal, ChildrenContainer, Text, Title } from './styled';
 
-const CustomModal = ({ children, title, open, setOpen }) => {
+const CustomModal = ({ children, title, open, setOpen, text }) => {
   const handleClose = () => setOpen(false);
 
   return (
@@ -15,6 +15,9 @@ const CustomModal = ({ children, title, open, setOpen }) => {
           <Title>
             {title}
           </Title>
+          <Text>
+            {text}
+          </Text>
           <ChildrenContainer>
             {children}
           </ChildrenContainer>

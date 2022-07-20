@@ -8,7 +8,7 @@ export const PrimaryButton = styled.div`
   font-weight: bold;
   background-color: #a31515;
   color: white;
-  width: 40%;
+  width: 48%;
   text-align: center;
 `
 
@@ -20,6 +20,6 @@ export const SecondaryButton = styled.div`
   font-size: 16px;
   font-weight: bold;
   background-color: white;
-  width: 40%;
+  width: 48%;
   text-align: center;
 `

@@ -13,7 +13,7 @@ export const CollectionCardContainer = styled.div`
 
 export const Cover = styled.img`
   width: 100%;
-  height: 100px;
+  height: 110px;
   object-fit: cover;
 `
 

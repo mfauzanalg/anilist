@@ -21,11 +21,18 @@ export const CollectionListContainer = styled.div`
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 150px;
 `
 
 export const ButtonContainer = styled.div`
   display: flex;
   margin-top: 5px;
-  justify-content: space-evenly;
+  justify-content: space-between;
 `
 
+export const InputContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px;
+`

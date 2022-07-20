@@ -15,8 +15,13 @@ export const BoxModal = styled.div`
 export const Title = styled.div`
   font-size: 24px;
   font-weight: bold;
+  margin-bottom: 5px;
+`
+
+export const Text = styled.div`
+  font-size: 14px;
+  margin-bottom: 15px;
 `
 
 export const ChildrenContainer = styled.div`
-  margin-top: 15px;
 `
