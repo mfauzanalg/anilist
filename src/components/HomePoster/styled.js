@@ -44,10 +44,11 @@ export const PosterTitle = styled.div`
   text-align: center;
   width: 90%;
   z-index: 1000;
-  font-size: 38px;
+  font-size: 36px;
   font-weight: bold;
   left: 50%;
   transform: translate(-50%, 0);
+  text-shadow: 0px 0px 15px #a31515;
 `
 
 export const PosterGenre = styled.div`
@@ -64,4 +65,20 @@ export const PosterGenreContainer = styled.div`
 export const Filler = styled.div`
   height: 35vh;
   margin-bottom: 70px;
+`
+
+export const Icon = styled.img`
+  position: absolute;
+  z-index: 99999;
+  max-height: 25px;
+  top: 25px;
+  left: 20px;
+`
+
+export const User = styled.img`
+  position: absolute;
+  z-index: 99999;
+  max-height: 40px;
+  top: 20px;
+  right: 20px;
 `
