@@ -121,7 +121,7 @@ export const CheckboxContainer = styled.div`
   display: flex;
   padding-left: 10px;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 5px 0;
   
 `
 

@@ -32,13 +32,13 @@ export const CollectionProvider = (props) => {
     return null
   }
 
-  const addNewCollection = (name) => {
+  const addNewCollection = (name, animes = []) => {
     const err = validateName(name)
     if (!err) {
       const temp = [...collections]
       temp.push({
         name: name,
-        animeList: [],
+        animeList: [...animes],
       })
       setCollections(temp);
       return null

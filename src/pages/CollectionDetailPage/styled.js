@@ -11,7 +11,7 @@ export const PageContainer = styled.div`
 
 export const Title = styled.div`
   padding-top: 20px;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   margin-bottom: 30px;
 `

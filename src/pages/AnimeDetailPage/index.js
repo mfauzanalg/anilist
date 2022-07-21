@@ -37,10 +37,11 @@ const AnimeDetailPage = () => {
     collections,
     addAnimeToCollection,
     isCollectionContained,
-    animeHasCollection
+    animeHasCollection,
+    addNewCollection,
   } = useContext(CollectionContext)
   const [isOpenDialog, setIsOpenDialog] = useState(false)
-  const [checkedItem, setChecked] = useState(new Array(collections.length).fill(false))
+  const [checkedItem, setChecked] = useState(new Array(collections.length).fill(false) || [false])
   const [animeCollection, setAnimeCollection] = useState([]);
 
   const getID = (pathname) => {
@@ -64,11 +65,17 @@ const AnimeDetailPage = () => {
   }
 
   const addToCollection = () => {
-    checkedItem.forEach((isAdd, index) => {
-      if (isAdd) {
-        addAnimeToCollection(data.Media, collections[index].name)
-      }
-    })
+    if (collections.length > 0) {
+      checkedItem.forEach((isAdd, index) => {
+        if (isAdd) {
+          addAnimeToCollection(data.Media, collections[index].name)
+        }
+      })
+    }
+    else {
+      const err = addNewCollection('new_collection', [data.Media])
+      console.log(err)
+    }
     setIsOpenDialog(false)
   }
 
@@ -140,6 +147,18 @@ const AnimeDetailPage = () => {
                     </CheckboxContainer>
                   )
                 })}
+                {collections.length === 0 && (
+                  <CheckboxContainer>
+                    <Checkbox
+                      value={'new_collection'}
+                      type={'checkbox'}
+                      onChange={() => { handleOnChange(0) }}
+                    />
+                    <CheckboxLabel>
+                      {'new_collection'}
+                    </CheckboxLabel>
+                  </CheckboxContainer>
+                )}
               </ContentModalContainer>
             </ConfirmationModal>
 
