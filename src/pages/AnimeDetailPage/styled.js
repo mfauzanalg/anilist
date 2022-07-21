@@ -120,3 +120,10 @@ export const ContentModalContainer = styled.div`
 export const Filler = styled.div`
   height: 20px;
 `
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`

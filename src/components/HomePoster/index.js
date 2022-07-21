@@ -1,12 +1,13 @@
 import { GET_ONE_ANIME } from '../../queries/anime';
 import { useQuery } from '@apollo/client';
-import { BottomShadow, Filler, Icon, ImageContainer, Poster, PosterContainer, PosterGenre, PosterGenreContainer, PosterTitle, TopShadow, User } from './styled';
-import { useState, useEffect } from 'react';
+import { BottomShadow, Filler, Icon, ImageContainer, LoadingContainer, Poster, PosterContainer, PosterGenre, PosterGenreContainer, PosterTitle, TopShadow, User } from './styled';
+import React, { useState, useEffect } from 'react';
+import Loading from '../Loading';
 
 const HomePoster = () => {
   const [poster, setPoster] = useState();
 
-  const { data } = useQuery(GET_ONE_ANIME, {
+  const { data, loading } = useQuery(GET_ONE_ANIME, {
     variables: { id: 1 }
   })
 
@@ -17,7 +18,7 @@ const HomePoster = () => {
   }, [data])
 
   return (
-    <>
+    <React.Fragment>
       {poster && (
         <PosterContainer>
           <Icon src={`${process.env.PUBLIC_URL}/anime.png`} alt='icon' />
@@ -41,8 +42,13 @@ const HomePoster = () => {
           </PosterTitle>
         </PosterContainer>
       )}
-      <Filler />
-    </>
+      {poster && <Filler />}
+      {
+        loading && <LoadingContainer>
+          <Loading />
+        </LoadingContainer>
+      }
+    </React.Fragment>
   )
 }
 

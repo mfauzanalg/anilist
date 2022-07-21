@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const ComponentContainer = styled.div`
-
 `
 
 export const AnimeContainer = styled.div`
@@ -15,6 +14,7 @@ export const AnimeCardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 90%;
+  transition: 0.3s;
 `
 
 export const Filler = styled.div`

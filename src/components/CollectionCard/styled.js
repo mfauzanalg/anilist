@@ -3,12 +3,24 @@ import styled from "@emotion/styled";
 export const OuterContainer = styled.div`
   position: relative;
   width: 100%;
+
+  @media (min-width: 480px) {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    width: 47%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 32%;
+  }
 `
 
 export const CollectionCardContainer = styled.div`
   width: 100%;
-  height: 90px;
-  margin-bottom: 30px;
+  height: 100px;
+  margin-bottom: 35px;
   background-color: rgb(138, 131, 131, 0.5);
   border-radius: 10px;
   display: flex;

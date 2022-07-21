@@ -82,3 +82,11 @@ export const User = styled.img`
   top: 20px;
   right: 20px;
 `
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35vh;
+  margin-bottom: 70px;
+`

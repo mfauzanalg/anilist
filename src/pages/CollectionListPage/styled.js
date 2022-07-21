@@ -19,8 +19,15 @@ export const CollectionListContainer = styled.div`
   margin-top: 30px;
   border-radius: 10px;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 150px;
+
+  &:after{
+    content: ' ';
+    width: 32%;
+  }
+
 `
 
 export const ButtonContainer = styled.div`

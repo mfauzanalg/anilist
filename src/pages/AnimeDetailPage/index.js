@@ -15,7 +15,8 @@ import {
   Subtitle,
   CollectionList,
   ContentModalContainer,
-  Filler
+  Filler,
+  LoadingContainer
 } from './styled'
 import React from 'react';
 import { GET_ONE_ANIME } from '../../queries/anime';
@@ -28,6 +29,7 @@ import ConfirmationModal from '../../components/Modal/ConfirmationModal';
 import CollectionCard from '../../components/CollectionCard'
 import TabBar from '../../components/TabBar';
 import Checkbox from '../../components/Checkbox';
+import Loading from '../../components/Loading';
 
 const AnimeDetailPage = () => {
   const location = useLocation();
@@ -148,6 +150,11 @@ const AnimeDetailPage = () => {
 
           </React.Fragment>
         )
+      }
+      {!data &&
+        <LoadingContainer>
+          <Loading />
+        </LoadingContainer>
       }
       <Filler />
       <TabBar />
