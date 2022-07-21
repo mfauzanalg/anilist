@@ -17,22 +17,41 @@ import Pagination from '../../components/Pagination'
 import ConfirmationModal from '../../components/Modal/ConfirmationModal';
 import { CollectionContext } from '../../context/CollectionContext';
 import Checkbox from '../../components/Checkbox';
+import { useLocation, useNavigate } from 'react-router-dom';
+import qs from "query-string";
 
 const AnimeListPage = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const params = qs.parse(location.search);
   const { collections, addNewCollection, addAnimeToCollection } = useContext(CollectionContext)
   const [isOpenDialog, setIsOpenDialog] = useState(false)
   const [checkedCollection, setCheckedCollection] = useState(new Array(collections.length).fill(false) || [false])
   const [checkedAnime, setCheckedAnime] = useState([])
   const [isSelectingAnime, setIsSelectingAnime] = useState(true);
   const [animes, setAnimes] = useState([]);
-  const [query, setQuery] = useState({
-    page: 1,
-    perPage: 16,
-  })
+  const [query, setQuery] = useState({})
 
-  const { data, refetch } = useQuery(GET_ANIME_LIST, {
+  const { data, loading } = useQuery(GET_ANIME_LIST, {
     variables: query
   })
+
+  useEffect(() => {
+    let page = 1;
+    if (qs.parse(location.search).page) {
+      page = parseInt(qs.parse(location.search).page);
+    }
+    setQuery({
+      page,
+      perPage: 16
+    });
+  }, [location.search]);
+
+  useEffect(() => {
+    if (query.page) {
+      navigate(`/anime?page=${query.page}`)
+    }
+  }, [navigate, query])
 
   useEffect(() => {
     if (data) {
@@ -81,7 +100,7 @@ const AnimeListPage = () => {
   return (
     <ComponentContainer>
       <HomePoster />
-      {data &&
+      {data && !loading &&
         <AnimeContainer>
           <ButtonContainer>
             <PillButton type={'primary'} onClick={handleBulkAdd}>
@@ -106,7 +125,6 @@ const AnimeListPage = () => {
               count={data.Page.pageInfo.lastPage}
               setQuery={setQuery}
               query={query}
-              refetch={refetch}
               page={query.page}
             />
           </PaginationContainer>
