@@ -42,3 +42,11 @@ export const PillButton = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
 `
+
+export const ContentModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-height: 200px;
+  overflow: auto;
+  flex-wrap: no-wrap;
+`

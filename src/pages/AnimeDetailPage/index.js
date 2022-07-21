@@ -15,9 +15,6 @@ import {
   Subtitle,
   CollectionList,
   ContentModalContainer,
-  CheckboxContainer,
-  Checkbox,
-  CheckboxLabel,
   Filler
 } from './styled'
 import React from 'react';
@@ -30,6 +27,7 @@ import Button from '../../components/Button';
 import ConfirmationModal from '../../components/Modal/ConfirmationModal';
 import CollectionCard from '../../components/CollectionCard'
 import TabBar from '../../components/TabBar';
+import Checkbox from '../../components/Checkbox';
 
 const AnimeDetailPage = () => {
   const location = useLocation();
@@ -57,12 +55,6 @@ const AnimeDetailPage = () => {
     const animCol = animeHasCollection(parseInt(getID(location.pathname)))
     setAnimeCollection(animCol)
   }, [animeHasCollection, location.pathname, collections])
-
-  const handleOnChange = (index) => {
-    const temp = [...checkedItem]
-    temp[index] = !temp[index]
-    setChecked(temp)
-  }
 
   const addToCollection = () => {
     if (collections.length > 0) {
@@ -133,30 +125,23 @@ const AnimeDetailPage = () => {
               <ContentModalContainer>
                 {collections.length > 0 && collections.map((collection, index) => {
                   return (
-                    <CheckboxContainer key={index}>
-                      <Checkbox
-                        value={collection.name}
-                        type={'checkbox'}
-                        onChange={() => { handleOnChange(index) }}
-                        disabled={isCollectionContained(collection, data.Media.id)}
-                      />
-                      <CheckboxLabel>
-                        {collection.name}
-                      </CheckboxLabel>
-                    </CheckboxContainer>
+                    <Checkbox
+                      key={index}
+                      label={collection.name}
+                      setChecked={setChecked}
+                      checkedItem={checkedItem}
+                      index={index}
+                      disabled={isCollectionContained(collection, data.Media.id)}
+                    />
                   )
                 })}
                 {collections.length === 0 && (
-                  <CheckboxContainer>
-                    <Checkbox
-                      value={'new_collection'}
-                      type={'checkbox'}
-                      onChange={() => { handleOnChange(0) }}
-                    />
-                    <CheckboxLabel>
-                      {'new_collection'}
-                    </CheckboxLabel>
-                  </CheckboxContainer>
+                  <Checkbox
+                    label={'new_collection'}
+                    setChecked={setChecked}
+                    checkedItem={checkedItem}
+                    index={0}
+                  />
                 )}
               </ContentModalContainer>
             </ConfirmationModal>

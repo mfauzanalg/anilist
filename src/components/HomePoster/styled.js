@@ -32,7 +32,7 @@ export const TopShadow = styled.div`
 export const BottomShadow = styled.div`
   position: absolute;
   bottom: -3px;
-  z-index: 9999;
+  z-index: 800;
   width: 100%;
   height: 40px;
   background-image: linear-gradient(transparent, #141414);
@@ -43,7 +43,7 @@ export const PosterTitle = styled.div`
   bottom: -45px;
   text-align: center;
   width: 100%;
-  z-index: 9999;
+  z-index: 1000;
   font-size: 40px;
   font-weight: bold;
 `

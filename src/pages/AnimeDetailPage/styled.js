@@ -117,23 +117,6 @@ export const ContentModalContainer = styled.div`
   flex-wrap: no-wrap;
 `
 
-export const CheckboxContainer = styled.div`
-  display: flex;
-  padding-left: 10px;
-  align-items: center;
-  margin: 5px 0;
-  
-`
-
-export const Checkbox = styled.input`
-  width: 20px;
-  height: 20px;
-`
-
-export const CheckboxLabel = styled.div`
-  margin-left: 10px;
-`
-
 export const Filler = styled.div`
   height: 20px;
 `
