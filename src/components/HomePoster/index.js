@@ -3,8 +3,10 @@ import { useQuery } from '@apollo/client';
 import { BottomShadow, Filler, Icon, ImageContainer, LoadingContainer, Poster, PosterContainer, PosterGenre, PosterGenreContainer, PosterTitle, TopShadow, User } from './styled';
 import React, { useState, useEffect } from 'react';
 import Loading from '../Loading';
+import { useNavigate } from 'react-router-dom';
 
 const HomePoster = () => {
+  const navigate = useNavigate()
   const [poster, setPoster] = useState();
 
   const { data, loading } = useQuery(GET_ONE_ANIME, {
@@ -16,6 +18,10 @@ const HomePoster = () => {
       setPoster(data.Media)
     }
   }, [data])
+
+  const onClick = () => {
+    navigate('/anime/1')
+  }
 
   return (
     <React.Fragment>
@@ -31,7 +37,7 @@ const HomePoster = () => {
           </ImageContainer>
           <TopShadow />
           <BottomShadow />
-          <PosterTitle>
+          <PosterTitle onClick={onClick}>
             {poster?.title?.romaji.toUpperCase()}
             <PosterGenreContainer>
               {poster?.genres?.map((genre, index) => {

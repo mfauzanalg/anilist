@@ -77,6 +77,10 @@ const AnimeDetailPage = () => {
     setIsOpenDialog(false)
   }
 
+  const editDescription = (text) => {
+    return text.replace(/<br>/g, ' ');
+  }
+
   return (
     <PageContainer>
       {
@@ -100,7 +104,7 @@ const AnimeDetailPage = () => {
                 })}
               </GenreContainer>
               <DescriptionContainer>
-                {data.Media.description}
+                {editDescription(data.Media.description)}
               </DescriptionContainer>
               <CollectionListContainer>
                 <CollectionHeader>

@@ -49,6 +49,7 @@ export const PosterTitle = styled.div`
   left: 50%;
   transform: translate(-50%, 0);
   text-shadow: 0px 0px 15px #a31515;
+  cursor: pointer;
 `
 
 export const PosterGenre = styled.div`
