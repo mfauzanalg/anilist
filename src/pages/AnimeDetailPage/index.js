@@ -16,7 +16,8 @@ import {
   CollectionList,
   ContentModalContainer,
   Filler,
-  LoadingContainer
+  LoadingContainer,
+  EmptyContainer
 } from './styled'
 import React from 'react';
 import { GET_ONE_ANIME } from '../../queries/anime';
@@ -57,6 +58,10 @@ const AnimeDetailPage = () => {
     const animCol = animeHasCollection(parseInt(getID(location.pathname)))
     setAnimeCollection(animCol)
   }, [animeHasCollection, location.pathname, collections])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [])
 
   const addToCollection = () => {
     if (collections.length > 0) {
@@ -107,9 +112,16 @@ const AnimeDetailPage = () => {
                   </Button>
                 </CollectionHeader>
                 <CollectionList>
-                  {animeCollection.map((coll, index) => {
+                  {animeCollection.length > 0 && animeCollection.map((coll, index) => {
                     return <CollectionCard key={index} details={coll} isHideDelete isHideEdit />
                   })}
+                  {
+                    animeCollection.length === 0 && (
+                      <EmptyContainer>
+                        Not contained in any Collection
+                      </EmptyContainer>
+                    )
+                  }
                 </CollectionList>
               </CollectionListContainer>
             </ContentContainer>

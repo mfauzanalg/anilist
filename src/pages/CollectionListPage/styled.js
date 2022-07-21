@@ -19,14 +19,14 @@ export const CollectionListContainer = styled.div`
   margin-top: 30px;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 150px;
 
-  &:after{
-    content: ' ';
-    width: 32%;
-  }
+  // &:after{
+  //   content: ' ';
+  //   width: 32%;
+  // }
 
 `
 

@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { AnimeListContainer, ButtonContainer, Filler, PageContainer, Title, InputContainer } from './styled';
+import { AnimeListContainer, ButtonContainer, Filler, PageContainer, Title, InputContainer, EmptyContainer, EmptyText } from './styled';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import { CollectionContext } from '../../context/CollectionContext';
@@ -82,6 +82,15 @@ const CollectionDetailPage = () => {
               })}
             </AnimeListContainer>
           </>
+        }
+        {
+          collection.animeList.length === 0 && (
+            <EmptyContainer>
+              <EmptyText>
+                Empty Collection
+              </EmptyText>
+            </EmptyContainer>
+          )
         }
       </PageContainer>
 

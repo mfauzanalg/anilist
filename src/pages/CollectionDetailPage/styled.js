@@ -39,3 +39,22 @@ export const InputContainer = styled.div`
   width: 100%;
   margin-bottom: 15px;
 `
+
+export const EmptyContainer = styled.div`
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const EmptyText = styled.div`
+  width: 200px;
+  height: 200px;
+  border: 3px dashed white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  font-size: 24px;
+  text-align: center;
+`

@@ -106,7 +106,8 @@ export const Subtitle = styled.div`
 export const CollectionList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding-top: 5px
+  padding-top: 5px;
+  justify-content: center;
 `
 
 export const ContentModalContainer = styled.div`
@@ -126,4 +127,15 @@ export const LoadingContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+`
+
+export const EmptyContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed white;
+  padding: 10px;
+  margin-top: 3px;
+  border-radius: 30px;
+  text-align: center;
 `

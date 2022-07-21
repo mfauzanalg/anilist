@@ -3,17 +3,18 @@ import styled from "@emotion/styled";
 export const OuterContainer = styled.div`
   position: relative;
   width: 100%;
+  margin: 0 13px;
 
   @media (min-width: 480px) {
     width: 100%;
   }
 
   @media (min-width: 768px) {
-    width: 47%;
+    width: 40%;
   }
 
   @media (min-width: 1024px) {
-    width: 32%;
+    width: 30%;
   }
 `
 
