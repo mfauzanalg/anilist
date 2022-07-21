@@ -10,7 +10,6 @@ export const TabBarComp = styled.div`
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
-  // border-top: 0.5px solid gray;
   z-index: 999;
   opacity: 0.95;
 `

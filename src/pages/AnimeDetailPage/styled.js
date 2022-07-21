@@ -132,3 +132,7 @@ export const Checkbox = styled.input`
 export const CheckboxLabel = styled.div`
   margin-left: 10px;
 `
+
+export const Filler = styled.div`
+  height: 20px;
+`

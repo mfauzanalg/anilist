@@ -17,7 +17,8 @@ import {
   ContentModalContainer,
   CheckboxContainer,
   Checkbox,
-  CheckboxLabel
+  CheckboxLabel,
+  Filler
 } from './styled'
 import React from 'react';
 import { GET_ONE_ANIME } from '../../queries/anime';
@@ -28,6 +29,7 @@ import { CollectionContext } from '../../context/CollectionContext';
 import Button from '../../components/Button';
 import ConfirmationModal from '../../components/Modal/ConfirmationModal';
 import CollectionCard from '../../components/CollectionCard'
+import TabBar from '../../components/TabBar';
 
 const AnimeDetailPage = () => {
   const location = useLocation();
@@ -144,7 +146,8 @@ const AnimeDetailPage = () => {
           </React.Fragment>
         )
       }
-
+      <Filler />
+      <TabBar />
     </PageContainer>
   )
 }

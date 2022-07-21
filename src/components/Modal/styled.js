@@ -5,7 +5,7 @@ export const BoxModal = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
+  width: 70%;
   background: white;
   padding: 15px;
   border-radius: 8px;
