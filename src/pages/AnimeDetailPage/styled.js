@@ -106,6 +106,7 @@ export const Subtitle = styled.div`
 export const CollectionList = styled.div`
   display: flex;
   flex-wrap: wrap;
+  padding-top: 5px
 `
 
 export const ContentModalContainer = styled.div`

@@ -4,9 +4,10 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ConfirmationModal from '../Modal/ConfirmationModal';
 import { CollectionContext } from '../../context/CollectionContext'
 import { useNavigate } from 'react-router-dom';
+import CornerButton from '../CornerButton';
 
 
-const CollectionCard = ({ attr }) => {
+const CollectionCard = ({ attr, isHideDelete }) => {
   const navigate = useNavigate()
   const { deleteCollection } = useContext(CollectionContext)
   const [isOpenDialog, setIsOpenDialog] = useState(false);
@@ -40,9 +41,13 @@ const CollectionCard = ({ attr }) => {
           </Title>
         </TextContainer>
       </CollectionCardContainer>
-      <Delete onClick={handleDeleteMondal}>
-        <DeleteForeverIcon fontSize='10px' />
-      </Delete>
+      {!isHideDelete &&
+        <Delete onClick={handleDeleteMondal}>
+          <CornerButton color={'#a31515'} size={'30px'}>
+            <DeleteForeverIcon fontSize='10px' />
+          </CornerButton>
+        </Delete>
+      }
 
       {/* Modals */}
       <ConfirmationModal

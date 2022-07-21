@@ -40,16 +40,7 @@ export const Title = styled.div`
 `
 
 export const Delete = styled.div`
-  width: 30px;
-  height: 30px;
-  border-radius: 100px;
   position: absolute;
-  background: #a31515;
-  border: 0.5px solid black;
   right: -10px;
   top: -10px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `

@@ -13,7 +13,6 @@ const CollectionDetailPage = () => {
   useEffect(() => {
     const col = getCollectionByName(getName(location.pathname))
     setCollection(col)
-    console.log(col)
   }, [getCollectionByName, location.pathname])
 
   const getName = (pathname) => {
