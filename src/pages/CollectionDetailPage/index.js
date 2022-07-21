@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { AnimeListContainer, ButtonContainer, Filler, PageContainer, Title, InputContainer } from './styled';
-import { useLocation, useNavigate, useHref } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import { CollectionContext } from '../../context/CollectionContext';
 import TabBar from '../../components/TabBar';
@@ -23,13 +23,10 @@ const CollectionDetailPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   useEffect(() => {
-    console.log('asd')
     const col = getCollectionByName(getName(location.pathname))
     setCollection(col)
     setNewName(col.name)
   }, [])
-
-
 
   const handleEdit = () => {
     setNewName(collection.name)

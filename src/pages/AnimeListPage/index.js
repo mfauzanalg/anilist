@@ -3,7 +3,7 @@ import { GET_ANIME_LIST } from '../../queries/anime'
 import { useState } from 'react';
 import HomePoster from '../../components/HomePoster';
 import AnimeCard from '../../components/AnimeCard';
-import { AnimeCardContainer, ComponentContainer, Filler, PaginationContainer } from './styled';
+import { AnimeCardContainer, AnimeContainer, ButtonContainer, ComponentContainer, Filler, PaginationContainer, PillButton } from './styled';
 import Pagination from '../../components/Pagination'
 
 const AnimeListPage = ({ page }) => {
@@ -20,7 +20,12 @@ const AnimeListPage = ({ page }) => {
     <ComponentContainer>
       <HomePoster />
       {data &&
-        <>
+        <AnimeContainer>
+          <ButtonContainer>
+            <PillButton type={'primary'}>
+              Bulk Add Anime
+            </PillButton>
+          </ButtonContainer>
           <AnimeCardContainer>
             {data.Page && data.Page.media.map((item, index) => {
               return (
@@ -43,7 +48,7 @@ const AnimeListPage = ({ page }) => {
               page={query.page}
             />
           </PaginationContainer>
-        </>
+        </AnimeContainer>
       }
       <Filler />
     </ComponentContainer>

@@ -40,7 +40,7 @@ export const BottomShadow = styled.div`
 
 export const PosterTitle = styled.div`
   position: absolute;
-  bottom: -50px;
+  bottom: -45px;
   text-align: center;
   width: 100%;
   z-index: 9999;
@@ -60,5 +60,7 @@ export const PosterGenreContainer = styled.div`
 `
 
 export const Filler = styled.div`
-  height: 48vh
+  height: 35vh;
+  background-color: red;
+  margin-bottom: 70px;
 `
