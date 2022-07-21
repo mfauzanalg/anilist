@@ -8,7 +8,6 @@ export const AnimeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
 `
 
 export const AnimeCardContainer = styled.div`
@@ -49,4 +48,11 @@ export const ContentModalContainer = styled.div`
   max-height: 200px;
   overflow: auto;
   flex-wrap: no-wrap;
+`
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
 `

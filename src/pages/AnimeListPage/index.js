@@ -10,6 +10,7 @@ import {
   ComponentContainer,
   ContentModalContainer,
   Filler,
+  LoadingContainer,
   PaginationContainer,
   PillButton,
 } from './styled';
@@ -19,11 +20,11 @@ import { CollectionContext } from '../../context/CollectionContext';
 import Checkbox from '../../components/Checkbox';
 import { useLocation, useNavigate } from 'react-router-dom';
 import qs from "query-string";
+import Loading from '../../components/Loading';
 
 const AnimeListPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const params = qs.parse(location.search);
   const { collections, addNewCollection, addAnimeToCollection } = useContext(CollectionContext)
   const [isOpenDialog, setIsOpenDialog] = useState(false)
   const [checkedCollection, setCheckedCollection] = useState(new Array(collections.length).fill(false) || [false])
@@ -108,7 +109,7 @@ const AnimeListPage = () => {
             </PillButton>
           </ButtonContainer>
           <AnimeCardContainer>
-            {data.Page && animes.map((item, index) => {
+            {data.Page && data.Page.media.map((item, index) => {
               return (
                 <AnimeCard
                   isHideDelete
@@ -129,6 +130,13 @@ const AnimeListPage = () => {
             />
           </PaginationContainer>
         </AnimeContainer>
+      }
+      {
+        !data && (
+          <LoadingContainer>
+            <Loading />
+          </LoadingContainer>
+        )
       }
 
       {/* Modals */}
