@@ -16,9 +16,9 @@ const HomePoster = () => {
     }
   }, [data])
 
-  if (poster) {
-    return (
-      <>
+  return (
+    <>
+      {poster && (
         <PosterContainer>
           <ImageContainer>
             <Poster
@@ -39,10 +39,10 @@ const HomePoster = () => {
             </PosterGenreContainer>
           </PosterTitle>
         </PosterContainer>
-        <Filler />
-      </>
-    )
-  }
+      )}
+      <Filler />
+    </>
+  )
 }
 
 export default HomePoster;

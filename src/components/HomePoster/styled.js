@@ -42,10 +42,12 @@ export const PosterTitle = styled.div`
   position: absolute;
   bottom: -45px;
   text-align: center;
-  width: 100%;
+  width: 90%;
   z-index: 1000;
-  font-size: 40px;
+  font-size: 38px;
   font-weight: bold;
+  left: 50%;
+  transform: translate(-50%, 0);
 `
 
 export const PosterGenre = styled.div`
@@ -61,6 +63,5 @@ export const PosterGenreContainer = styled.div`
 
 export const Filler = styled.div`
   height: 35vh;
-  background-color: red;
   margin-bottom: 70px;
 `

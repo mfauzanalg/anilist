@@ -15,7 +15,7 @@ export const AnimeCardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 15px;
+  width: 90%;
 `
 
 export const Filler = styled.div`
