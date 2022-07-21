@@ -15,6 +15,7 @@ import { CollectionContext } from '../../context/CollectionContext'
 import { useNavigate } from 'react-router-dom';
 import CornerButton from '../CornerButton';
 import EditIcon from '@mui/icons-material/Edit';
+import { cutStr } from '../../utils/helper'
 
 const CollectionCard = ({
   details,
@@ -61,7 +62,7 @@ const CollectionCard = ({
         </ConverContainer>
         <TextContainer>
           <Title>
-            {details.name}
+            {cutStr(details.name, 14)}
           </Title>
         </TextContainer>
       </CollectionCardContainer>

@@ -7,13 +7,17 @@ export const PageContainer = styled.div`
   position: relative;
   color: white;
   padding-bottom: 40px;
+  widthh: 100%;
 `
 
 export const Title = styled.div`
   padding-top: 20px;
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+  overflow: auto;
+  width: 100%;
+  padding-bottom: 20px;
 `
 
 export const Filler = styled.div`
@@ -57,4 +61,8 @@ export const EmptyText = styled.div`
   border-radius: 100px;
   font-size: 24px;
   text-align: center;
+`
+
+export const ContentContainer = styled.div`
+  width: 100%;
 `

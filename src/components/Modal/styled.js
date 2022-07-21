@@ -10,19 +10,7 @@ export const BoxModal = styled.div`
   padding: 15px;
   border-radius: 15px;
   outline: 0;
-  max-width: 450px;
-
-  @media (min-width: 480px) {
-    width: 70%;
-  }
-
-  @media (min-width: 768px) {
-    width: 50%;
-  }
-
-  @media (min-width: 1024px) {
-    width: 40%;
-  }
+  max-width: 400px;
 `
 
 export const Title = styled.div`

@@ -31,6 +31,7 @@ import CollectionCard from '../../components/CollectionCard'
 import TabBar from '../../components/TabBar';
 import Checkbox from '../../components/Checkbox';
 import Loading from '../../components/Loading';
+import { cutStr } from '../../utils/helper';
 
 const AnimeDetailPage = () => {
   const location = useLocation();
@@ -145,7 +146,7 @@ const AnimeDetailPage = () => {
                   return (
                     <Checkbox
                       key={index}
-                      label={collection.name}
+                      label={cutStr(collection.name, 25)}
                       setChecked={setChecked}
                       checkedItem={checkedItem}
                       index={index}

@@ -21,6 +21,7 @@ import Checkbox from '../../components/Checkbox';
 import { useLocation, useNavigate } from 'react-router-dom';
 import qs from "query-string";
 import Loading from '../../components/Loading';
+import { cutStr } from '../../utils/helper';
 
 const AnimeListPage = () => {
   const location = useLocation();
@@ -155,7 +156,7 @@ const AnimeListPage = () => {
               return (
                 <Checkbox
                   key={index}
-                  label={anime.title.romaji}
+                  label={cutStr(anime.title.romaji, 25)}
                   setChecked={setCheckedAnime}
                   checkedItem={checkedAnime}
                   index={index}
@@ -170,7 +171,7 @@ const AnimeListPage = () => {
               return (
                 <Checkbox
                   key={index}
-                  label={collection.name}
+                  label={cutStr(collection.name, 25)}
                   setChecked={setCheckedCollection}
                   checkedItem={checkedCollection}
                   index={index}
