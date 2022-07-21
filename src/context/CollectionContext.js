@@ -48,6 +48,24 @@ export const CollectionProvider = (props) => {
     }
   }
 
+  const editCollection = (oldName, newName) => {
+    let err = validateName(newName);
+    if (oldName === newName) {
+      err = 'Change the name before edit'
+    }
+
+    if (!err) {
+      const idx = collections.findIndex(collection => collection.name === oldName)
+      const temp = [...collections]
+      temp[idx].name = newName
+      setCollections(temp)
+      return null;
+    }
+    else {
+      return err;
+    }
+  }
+
   const deleteCollection = (name) => {
     const idx = collections.findIndex(collection => collection.name === name)
     if (idx > -1) {
@@ -132,6 +150,7 @@ export const CollectionProvider = (props) => {
       animeHasCollection,
       getCollectionCover,
       removeAnimeFromCollection,
+      editCollection,
     }}>
       {props.children}
     </CollectionContext.Provider>

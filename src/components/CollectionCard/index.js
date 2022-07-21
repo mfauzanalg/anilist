@@ -1,13 +1,30 @@
 import { useState, useContext } from 'react';
-import { CollectionCardContainer, ConverContainer, Cover, Delete, OuterContainer, TextContainer, Title } from './styled'
+import {
+  CollectionCardContainer,
+  ConverContainer,
+  Cover,
+  Delete,
+  EditContainer,
+  OuterContainer,
+  TextContainer,
+  Title
+} from './styled'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ConfirmationModal from '../Modal/ConfirmationModal';
 import { CollectionContext } from '../../context/CollectionContext'
 import { useNavigate } from 'react-router-dom';
 import CornerButton from '../CornerButton';
+import EditIcon from '@mui/icons-material/Edit';
 
-
-const CollectionCard = ({ details, isHideDelete }) => {
+const CollectionCard = ({
+  details,
+  isHideDelete,
+  isHideEdit,
+  setOpen,
+  setIsEditing,
+  setCollectionName,
+  setOldName
+}) => {
   const navigate = useNavigate()
   const { deleteCollection, getCollectionCover } = useContext(CollectionContext)
   const [isOpenDialog, setIsOpenDialog] = useState(false);
@@ -29,6 +46,13 @@ const CollectionCard = ({ details, isHideDelete }) => {
     navigate(`/collection/${details.name}`)
   }
 
+  const handleEditCollection = () => {
+    setOldName(details.name)
+    setCollectionName(details.name)
+    setIsEditing(true)
+    setOpen(true)
+  }
+
   return (
     <OuterContainer>
       <CollectionCardContainer onClick={handleCardClick}>
@@ -41,12 +65,23 @@ const CollectionCard = ({ details, isHideDelete }) => {
           </Title>
         </TextContainer>
       </CollectionCardContainer>
-      {!isHideDelete &&
+
+      {
+        !isHideDelete &&
         <Delete onClick={handleDeleteMondal}>
-          <CornerButton color={'#a31515'} size={'30px'}>
+          <CornerButton color={'#a31515'} size={'28px'}>
             <DeleteForeverIcon fontSize='10px' />
           </CornerButton>
         </Delete>
+      }
+
+      {
+        !isHideEdit &&
+        <EditContainer onClick={handleEditCollection}>
+          <CornerButton color={'gray'} size={'28px'}>
+            <EditIcon fontSize='10px' />
+          </CornerButton>
+        </EditContainer>
       }
 
       {/* Modals */}

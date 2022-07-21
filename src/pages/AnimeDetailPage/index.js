@@ -73,8 +73,7 @@ const AnimeDetailPage = () => {
       })
     }
     else {
-      const err = addNewCollection('new_collection', [data.Media])
-      console.log(err)
+      addNewCollection('new_collection', [data.Media])
     }
     setIsOpenDialog(false)
   }

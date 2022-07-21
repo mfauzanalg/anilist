@@ -51,5 +51,4 @@ export const RemoveContainer = styled.div`
 `
 
 export const CardContainer = styled.div`
-
 `

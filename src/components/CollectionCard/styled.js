@@ -44,3 +44,9 @@ export const Delete = styled.div`
   right: -10px;
   top: -10px;
 `
+
+export const EditContainer = styled.div`
+  position: absolute;
+  right: 25px;
+  top: -10px;
+`
