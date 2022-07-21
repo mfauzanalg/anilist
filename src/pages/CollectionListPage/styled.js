@@ -22,12 +22,6 @@ export const CollectionListContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 150px;
-
-  // &:after{
-  //   content: ' ';
-  //   width: 32%;
-  // }
-
 `
 
 export const ButtonContainer = styled.div`
@@ -41,4 +35,26 @@ export const InputContainer = styled.div`
   justify-content: center;
   width: 100%;
   margin-bottom: 15px;
+`
+
+export const EmptyContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+
+export const EmptyText = styled.div`
+  width: 200px;
+  height: 200px;
+  border: 3px dashed white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  font-size: 20px;
+  text-align: center;
 `

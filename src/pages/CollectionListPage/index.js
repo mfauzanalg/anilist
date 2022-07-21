@@ -1,4 +1,4 @@
-import { CollectionListContainer, ComponentContainer, Title, InputContainer } from './styled'
+import { CollectionListContainer, ComponentContainer, Title, InputContainer, EmptyContainer, EmptyText } from './styled'
 import CollectionCard from '../../components/CollectionCard'
 import { CollectionContext } from '../../context/CollectionContext'
 import { useContext, useState } from 'react'
@@ -60,6 +60,16 @@ const CollectionListPage = () => {
               />
             )
           })
+        }
+        {
+          collections.length === 0 &&
+          (
+            <EmptyContainer>
+              <EmptyText>
+                Empty List of Collection
+              </EmptyText>
+            </EmptyContainer>
+          )
         }
       </CollectionListContainer>
       <FloatingButton onClick={() => setIsOpenCreateModal(true)} />
