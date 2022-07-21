@@ -86,8 +86,8 @@ export const CollectionProvider = (props) => {
     return null
   }
 
-  const addAnimeToCollection = (anime, collection) => {
-    const collectionIdx = collections.findIndex(coll => coll.name === collection)
+  const addAnimeToCollection = (anime, collectionName) => {
+    const collectionIdx = collections.findIndex(coll => coll.name === collectionName)
     if (collectionIdx !== -1) {
       const animeIdx = collections[collectionIdx].animeList.findIndex(anim => anim.id === anime.id)
       if (animeIdx === -1) {

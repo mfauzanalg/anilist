@@ -19,7 +19,7 @@ import { CollectionContext } from '../../context/CollectionContext';
 import Checkbox from '../../components/Checkbox';
 
 const AnimeListPage = () => {
-  const { collections, addNewCollection } = useContext(CollectionContext)
+  const { collections, addNewCollection, addAnimeToCollection } = useContext(CollectionContext)
   const [isOpenDialog, setIsOpenDialog] = useState(false)
   const [checkedCollection, setCheckedCollection] = useState(new Array(collections.length).fill(false) || [false])
   const [checkedAnime, setCheckedAnime] = useState([])
@@ -50,17 +50,26 @@ const AnimeListPage = () => {
       setIsSelectingAnime(false)
     }
     else {
-      // adding to collection
+      let colAnime = []
+      animes.forEach((anime, index) => {
+        if (checkedAnime[index]) {
+          colAnime.push(anime)
+        }
+      })
       if (collections.length === 0) {
-        const colAnime = []
-        animes.forEach((anime, index) => {
-          if (checkedAnime[index]) {
-            colAnime.push(anime)
+        addNewCollection('new_collection', colAnime);
+
+      }
+      else {
+        collections.forEach((coll, index) => {
+          if (checkedCollection[index]) {
+            colAnime.forEach(anime => {
+              addAnimeToCollection(anime, coll.name)
+            })
           }
         })
-        addNewCollection('new_collection', colAnime);
-        onSecondaryClick();
       }
+      onSecondaryClick();
     }
   }
 
