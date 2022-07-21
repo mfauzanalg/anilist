@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const AnimeCardContainer = styled.div`
   width: 150px;
-  margin: 5px 8px;
+  margin: ${props => (props.isHideDelete ? '5px 8px' : '10px 8px')};
   position: relative;
   cursor: pointer;
 `
@@ -42,4 +42,14 @@ export const BottomShadow = styled.div`
   width: 100%;
   height: 40%;
   background-image: linear-gradient(transparent, #141414);
+`
+
+export const RemoveContainer = styled.div`
+  position: absolute;
+  right: -10px;
+  top: -10px;
+`
+
+export const CardContainer = styled.div`
+
 `

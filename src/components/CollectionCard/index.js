@@ -7,16 +7,16 @@ import { useNavigate } from 'react-router-dom';
 import CornerButton from '../CornerButton';
 
 
-const CollectionCard = ({ attr, isHideDelete }) => {
+const CollectionCard = ({ details, isHideDelete }) => {
   const navigate = useNavigate()
-  const { deleteCollection } = useContext(CollectionContext)
+  const { deleteCollection, getCollectionCover } = useContext(CollectionContext)
   const [isOpenDialog, setIsOpenDialog] = useState(false);
   const handleDeleteMondal = () => {
     setIsOpenDialog(true)
   }
 
   const handleDeleteCollection = () => {
-    const err = deleteCollection(attr.name)
+    const err = deleteCollection(details.name)
     if (err) {
       alert(err)
     }
@@ -26,18 +26,18 @@ const CollectionCard = ({ attr, isHideDelete }) => {
   }
 
   const handleCardClick = () => {
-    navigate(`/collection/${attr.name}`)
+    navigate(`/collection/${details.name}`)
   }
 
   return (
     <OuterContainer>
       <CollectionCardContainer onClick={handleCardClick}>
         <ConverContainer>
-          <Cover src={`${attr.cover}`} />
+          <Cover src={getCollectionCover(details)} />
         </ConverContainer>
         <TextContainer>
           <Title>
-            {attr.name}
+            {details.name}
           </Title>
         </TextContainer>
       </CollectionCardContainer>
@@ -52,7 +52,7 @@ const CollectionCard = ({ attr, isHideDelete }) => {
       {/* Modals */}
       <ConfirmationModal
         title={'Delete Collection'}
-        text={`Are you sure want to delete ${attr.name}?`}
+        text={`Are you sure want to delete ${details.name}?`}
         open={isOpenDialog}
         setOpen={setIsOpenDialog}
         primaryButtonText={'Delete'}

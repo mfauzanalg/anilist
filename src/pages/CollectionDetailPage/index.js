@@ -32,6 +32,7 @@ const CollectionDetailPage = () => {
               {collection.animeList.map((anime, index) => {
                 return (
                   <AnimeCard
+                    collectionName={getName(location.pathname)}
                     key={index}
                     id={anime.id}
                     title={anime.title.romaji}

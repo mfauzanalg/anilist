@@ -17,6 +17,13 @@ export const CollectionProvider = (props) => {
     return false
   }
 
+  const getCollectionCover = (collection) => {
+    if (collection.animeList[0]) {
+      return collection.animeList[0].coverImage.extraLarge
+    }
+    return `${process.env.PUBLIC_URL}/empty4.jpeg`
+  }
+
   const validateName = (newName) => {
     const pattern = /^[a-zA-Z0-9_]*$/i;
     if (!newName) return 'Collection name cannot be empty'
@@ -32,7 +39,6 @@ export const CollectionProvider = (props) => {
       temp.push({
         name: name,
         animeList: [],
-        cover: `${process.env.PUBLIC_URL}/empty4.jpeg`,
       })
       setCollections(temp);
       return null
@@ -72,6 +78,27 @@ export const CollectionProvider = (props) => {
         setCollections(temp);
       }
     }
+    else {
+      return 'Collection not found'
+    }
+  }
+
+  const removeAnimeFromCollection = (animeId, collectionName) => {
+    const collectionIdx = collections.findIndex(coll => coll.name === collectionName)
+    if (collectionIdx !== -1) {
+      const animeIdx = collections[collectionIdx].animeList.findIndex(anim => anim.id === animeId)
+      if (animeIdx !== -1) {
+        const temp = [...collections]
+        temp[collectionIdx].animeList.splice(animeIdx, 1)
+        setCollections(temp);
+      }
+      else {
+        return 'Anime is not cointained in this collection'
+      }
+    }
+    else {
+      return 'Collection not found'
+    }
   }
 
   const isCollectionContained = (collection, animeId) => {
@@ -102,7 +129,9 @@ export const CollectionProvider = (props) => {
       getCollectionByName,
       addAnimeToCollection,
       isCollectionContained,
-      animeHasCollection
+      animeHasCollection,
+      getCollectionCover,
+      removeAnimeFromCollection,
     }}>
       {props.children}
     </CollectionContext.Provider>

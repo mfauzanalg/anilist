@@ -36,7 +36,7 @@ const CollectionListPage = () => {
         {
           collections && collections.map((collection, index) => {
             return (
-              <CollectionCard attr={collection} key={index} />
+              <CollectionCard details={collection} key={index} />
             )
           })
         }

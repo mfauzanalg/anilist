@@ -108,7 +108,7 @@ const AnimeDetailPage = () => {
                 </CollectionHeader>
                 <CollectionList>
                   {animeCollection.map((coll, index) => {
-                    return <CollectionCard key={index} attr={coll} isHideDelete />
+                    return <CollectionCard key={index} details={coll} isHideDelete />
                   })}
                 </CollectionList>
               </CollectionListContainer>

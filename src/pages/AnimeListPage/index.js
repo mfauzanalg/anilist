@@ -25,6 +25,7 @@ const AnimeListPage = ({ page }) => {
             {data.Page && data.Page.media.map((item, index) => {
               return (
                 <AnimeCard
+                  isHideDelete
                   key={index}
                   title={item.title.romaji}
                   coverImage={item.coverImage.large}
