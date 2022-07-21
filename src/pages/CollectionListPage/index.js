@@ -66,7 +66,7 @@ const CollectionListPage = () => {
 
       {/* Modals */}
       <ConfirmationModal
-        title={isEditing ? 'Editing' : 'Create New Collection'}
+        title={isEditing ? 'Edit Collection' : 'Create New Collection'}
         text='Collection name must be unique and does not contain special char'
         open={isOpenCreateModal}
         setOpen={setIsOpenCreateModal}

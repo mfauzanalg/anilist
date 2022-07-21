@@ -13,7 +13,7 @@ export const Title = styled.div`
   padding-top: 20px;
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 `
 
 export const Filler = styled.div`
@@ -24,4 +24,18 @@ export const AnimeListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 10px 5px;
+  border-radius: 10px;
+`
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  margin-bottom: 20px;
+`
+
+export const InputContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px;
 `
