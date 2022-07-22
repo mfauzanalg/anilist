@@ -32,6 +32,7 @@ import TabBar from '../../components/TabBar';
 import Checkbox from '../../components/Checkbox';
 import Loading from '../../components/Loading';
 import { cutStr } from '../../utils/helper';
+import toast from 'react-hot-toast';
 
 const AnimeDetailPage = () => {
   const location = useLocation();
@@ -76,6 +77,7 @@ const AnimeDetailPage = () => {
       addNewCollection('new_collection', [data.Media])
     }
     setIsOpenDialog(false)
+    toast.success('Success add to collection')
   }
 
   const editDescription = (text) => {

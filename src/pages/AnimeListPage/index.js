@@ -22,6 +22,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import qs from "query-string";
 import Loading from '../../components/Loading';
 import { cutStr } from '../../utils/helper';
+import toast from 'react-hot-toast';
 
 const AnimeListPage = () => {
   const location = useLocation();
@@ -79,7 +80,6 @@ const AnimeListPage = () => {
       })
       if (collections.length === 0) {
         addNewCollection('new_collection', colAnime);
-
       }
       else {
         collections.forEach((coll, index) => {
@@ -91,6 +91,7 @@ const AnimeListPage = () => {
         })
       }
       onSecondaryClick();
+      toast.success('Success bulk add to collection');
     }
   }
 

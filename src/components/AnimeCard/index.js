@@ -5,6 +5,7 @@ import { useContext, useState } from 'react';
 import { CollectionContext } from '../../context/CollectionContext';
 import CornerButton from '../CornerButton';
 import CloseIcon from '@mui/icons-material/Close';
+import toast from 'react-hot-toast';
 
 const AnimeCard = ({ title, coverImage, id, isHideDelete, collectionName }) => {
   const navigate = useNavigate()
@@ -22,6 +23,7 @@ const AnimeCard = ({ title, coverImage, id, isHideDelete, collectionName }) => {
   const handleRemoveAnime = () => {
     removeAnimeFromCollection(id, collectionName)
     setIsOpenDialog(false)
+    toast.success('Success remove anime')
   }
 
   return (

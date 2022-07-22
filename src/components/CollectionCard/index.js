@@ -15,7 +15,8 @@ import { CollectionContext } from '../../context/CollectionContext'
 import { useNavigate } from 'react-router-dom';
 import CornerButton from '../CornerButton';
 import EditIcon from '@mui/icons-material/Edit';
-import { cutStr } from '../../utils/helper'
+import { cutStr } from '../../utils/helper';
+import toast from 'react-hot-toast';
 
 const CollectionCard = ({
   details,
@@ -36,10 +37,11 @@ const CollectionCard = ({
   const handleDeleteCollection = () => {
     const err = deleteCollection(details.name)
     if (err) {
-      alert(err)
+      toast.error(err)
     }
     else {
       setIsOpenDialog(false);
+      toast.success('Delete collection success')
     }
   }
 
@@ -95,7 +97,6 @@ const CollectionCard = ({
         onPrimaryClick={handleDeleteCollection}
         onSecondaryClick={() => { setIsOpenDialog(false) }}
       />
-
     </OuterContainer>
   )
 }

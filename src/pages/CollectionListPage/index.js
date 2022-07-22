@@ -5,6 +5,7 @@ import { useContext, useState } from 'react'
 import FloatingButton from '../../components/FloatingButton'
 import ConfirmationModal from '../../components/Modal/ConfirmationModal'
 import Input from '../../components/Input'
+import toast from 'react-hot-toast';
 
 const CollectionListPage = () => {
   const { collections, addNewCollection, editCollection } = useContext(CollectionContext)
@@ -33,9 +34,11 @@ const CollectionListPage = () => {
     }
 
     if (err) {
-      alert(err)
+      toast.error(err)
     }
     else {
+      if (isEditing) toast.success('Edit collection success')
+      else toast.success('Create collection success')
       setIsOpenCreateModal(false);
       setCollectionName('');
     }
@@ -88,7 +91,6 @@ const CollectionListPage = () => {
           <Input placeholder={'Collection Name'} value={collectionName} onChange={onNameChange} />
         </InputContainer>
       </ConfirmationModal>
-
     </ComponentContainer>
   )
 }

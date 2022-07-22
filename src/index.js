@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { CollectionProvider } from './context/CollectionContext';
+import { Toaster } from 'react-hot-toast';
 
 const client = new ApolloClient({
   uri: 'https://graphql.anilist.co',
@@ -16,6 +17,7 @@ root.render(
     <CollectionProvider>
       <ApolloProvider client={client}>
         <App />
+        <Toaster />
       </ApolloProvider>
     </CollectionProvider>
   </React.StrictMode>

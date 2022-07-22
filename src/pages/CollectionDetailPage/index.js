@@ -8,6 +8,7 @@ import AnimeCard from '../../components/AnimeCard';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import ConfirmationModal from '../../components/Modal/ConfirmationModal';
+import toast from 'react-hot-toast';
 
 const CollectionDetailPage = () => {
   const getName = (pathname) => {
@@ -42,12 +43,13 @@ const CollectionDetailPage = () => {
     const err = editCollection(collection.name, newName)
 
     if (err) {
-      alert(err)
+      toast.error(err)
     }
     else {
       setIsOpenModal(false);
       setNewName('');
       navigate(`/collection/${newName}`, { replace: true })
+      toast.success('Success edit collection')
     }
   }
 
