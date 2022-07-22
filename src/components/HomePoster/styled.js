@@ -23,7 +23,7 @@ export const ImageContainer = styled.div`
 export const TopShadow = styled.div`
   position: absolute;
   top: 0;
-  z-index: 9999;
+  z-index: 800;
   width: 100%;
   height: 100px;
   background-image: linear-gradient(#141414, transparent);
@@ -70,7 +70,7 @@ export const Filler = styled.div`
 
 export const Icon = styled.img`
   position: absolute;
-  z-index: 99999;
+  z-index: 1000;
   max-height: 25px;
   top: 25px;
   left: 20px;
@@ -78,7 +78,7 @@ export const Icon = styled.img`
 
 export const User = styled.img`
   position: absolute;
-  z-index: 99999;
+  z-index: 1000;
   max-height: 40px;
   top: 20px;
   right: 20px;
