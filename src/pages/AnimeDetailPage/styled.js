@@ -31,8 +31,12 @@ export const PosterContainer = styled.div`
   width: 150px;
   position: absolute;
   top: 50px;
-  left: 60px;
+  left: 30px;
   z-index: 99;
+
+  @media (min-width: 768px) {
+    left: 60px;
+  }
 `
 
 export const Poster = styled.img`
@@ -43,11 +47,16 @@ export const Poster = styled.img`
 `
 
 export const ContentContainer = styled.div`
-  margin: 60px;
-  margin-top: 90px;
+  margin: 60px 30px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
+  @media (min-width: 768px) {
+    margin: 60px;
+    margin-top: 80px;
+  }
 `
 
 export const Title = styled.div`
@@ -60,7 +69,6 @@ export const PosterGenre = styled.div`
   font-weight: bold;
   margin: 7px 0;
   padding: 3px 10px;
-  // border: 1px solid #a31515;
   background: white;
   border-radius: 10px;
   margin-right: 10px;
