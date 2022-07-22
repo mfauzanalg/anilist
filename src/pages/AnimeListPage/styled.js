@@ -28,7 +28,7 @@ export const PaginationContainer = styled.div`
   justify-content: center;
 `
 
-export const PillButton = styled.div`
+export const PillButton = styled.button`
   border: 1px solid black;
   background: #a31515;
   padding: 10px 15px;
@@ -36,6 +36,7 @@ export const PillButton = styled.div`
   margin-bottom: 20px;
   cursor: pointer;
   font-size: 16px;
+  color: white;
 `
 
 export const ButtonContainer = styled.div`

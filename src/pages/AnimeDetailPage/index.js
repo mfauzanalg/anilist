@@ -62,7 +62,7 @@ const AnimeDetailPage = () => {
   }, [animeHasCollection, location.pathname, collections])
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0 });
   }, [])
 
   const addToCollection = () => {

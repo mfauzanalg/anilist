@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled.button`
   display: flex;
   width: 30px;
   height: 30px;
@@ -14,4 +14,6 @@ export const ButtonContainer = styled.div`
   bottom: 100px;
   right: 50px;
   cursor: pointer;
+  color: white;
+  border: none;
 `

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnimeCard matches snapshot 1`] = `[Function]`;
+
+exports[`Card matches snapshot 1`] = `[Function]`;

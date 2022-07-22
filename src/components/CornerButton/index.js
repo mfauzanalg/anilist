@@ -3,7 +3,7 @@ import { CButton } from './styled'
 
 const CornerButton = ({ children, onClick, color, size }) => {
   return (
-    <CButton onClick={onClick} color={color} size={size}>
+    <CButton data-testid='corner-button' onClick={onClick} color={color} size={size}>
       {children}
     </CButton>
   )

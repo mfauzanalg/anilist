@@ -32,7 +32,7 @@ const AnimeCard = ({ title, coverImage, id, isHideDelete, collectionName }) => {
         <AnimePosterContainer>
           <AnimePosterImg src={coverImage} alt='coverImage' />
         </AnimePosterContainer>
-        <AnimeTitle>
+        <AnimeTitle data-testid='anime-card-title'>
           {title}
         </AnimeTitle>
         <BottomShadow />
