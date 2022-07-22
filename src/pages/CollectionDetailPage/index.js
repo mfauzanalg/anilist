@@ -27,6 +27,7 @@ const CollectionDetailPage = () => {
     const col = getCollectionByName(getName(location.pathname))
     setCollection(col)
     setNewName(col.name)
+    window.scrollTo({ top: 0 });
   }, [])
 
   const handleEdit = () => {
