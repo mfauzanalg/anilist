@@ -9,7 +9,7 @@ const CustomModal = ({ children, title, open, setOpen, text }) => {
         open={open}
       >
         <BoxModal>
-          <Title>
+          <Title data-testid='modal'>
             {title}
           </Title>
           <Text>

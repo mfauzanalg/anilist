@@ -142,6 +142,7 @@ export const CollectionProvider = (props) => {
   return (
     <CollectionContext.Provider value={{
       collections,
+      setCollections,
       addNewCollection,
       deleteCollection,
       getCollectionByName,

@@ -3,14 +3,14 @@ import '@testing-library/jest-dom/extend-expect';
 import { MemoryRouter } from 'react-router-dom';
 import { CollectionProvider } from '../../../context/CollectionContext';
 import AnimeCard from '..'
-import renderer from "react-test-renderer";
+import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event'
 
 const animeCardAttribute = {
   title: 'Anime title',
   coverImage: 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1-CXtrrkMpJ8Zq.png',
   id: 1,
-  isHideDelete: false
+  isHideDelete: false,
 }
 
 const animeCardAttributeHideDelete = {

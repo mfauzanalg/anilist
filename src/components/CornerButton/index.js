@@ -1,9 +1,9 @@
 import { CButton } from './styled'
 
 
-const CornerButton = ({ children, onClick, color, size }) => {
+const CornerButton = ({ children, onClick, color, size, testid = 'corner-button' }) => {
   return (
-    <CButton data-testid='corner-button' onClick={onClick} color={color} size={size}>
+    <CButton data-testid={testid} onClick={onClick} color={color} size={size}>
       {children}
     </CButton>
   )

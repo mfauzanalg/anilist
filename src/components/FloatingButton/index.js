@@ -3,7 +3,7 @@ import AddIcon from '@mui/icons-material/Add';
 
 const FloatingButton = ({ onClick }) => {
   return (
-    <ButtonContainer onClick={onClick}>
+    <ButtonContainer data-testid='floating-button' onClick={onClick}>
       <AddIcon />
     </ButtonContainer>
   )

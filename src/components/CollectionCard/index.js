@@ -57,7 +57,7 @@ const CollectionCard = ({
   }
 
   return (
-    <OuterContainer>
+    <OuterContainer data-testid={'collection-card'} value={details.name}>
       <CollectionCardContainer onClick={handleCardClick}>
         <ConverContainer>
           <Cover src={getCollectionCover(details)} />
@@ -72,7 +72,7 @@ const CollectionCard = ({
       {
         !isHideDelete &&
         <Delete onClick={handleDeleteMondal}>
-          <CornerButton color={'#a31515'} size={'28px'}>
+          <CornerButton testid='delete-button' color={'#a31515'} size={'28px'}>
             <DeleteForeverIcon fontSize='10px' />
           </CornerButton>
         </Delete>
@@ -81,7 +81,7 @@ const CollectionCard = ({
       {
         !isHideEdit &&
         <EditContainer onClick={handleEditCollection}>
-          <CornerButton color={'gray'} size={'28px'}>
+          <CornerButton testid='edit-button' color={'gray'} size={'28px'}>
             <EditIcon fontSize='10px' />
           </CornerButton>
         </EditContainer>
