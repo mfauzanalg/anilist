@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { CollectionProvider } from '../../../context/CollectionContext';
 import AnimeCard from '..'
 import renderer from "react-test-renderer";
+import userEvent from '@testing-library/user-event'
 
 const animeCardAttribute = {
   title: 'Anime title',
@@ -48,6 +49,14 @@ it('AnimeCard without close button', () => {
   renderComponent(animeCardAttributeHideDelete);
   expect(screen.queryByTestId('corner-button')).toBeNull();
 })
+
+it('Dialog pop up after click remove button with anime name on it', () => {
+  renderComponent(animeCardAttribute);
+  userEvent.click(screen.queryByTestId('corner-button'))
+  expect(screen.getByText('Remove from Collection')).toBeInTheDocument();
+  expect(screen.getByText(`Are you sure want to remove ${animeCardAttribute.title}?`)).toBeInTheDocument();
+})
+
 
 it("AnimeCard matches snapshot", () => {
   const tree = renderer.create(
