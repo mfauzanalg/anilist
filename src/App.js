@@ -14,6 +14,7 @@ const App = () => {
         <Route path="/anime/:id" element={<AnimeDetailPage />} />
         <Route path="/collection" element={<Landing page={'collection'} />} />
         <Route path="/collection/:name" element={<CollectionDetailPage />} />
+        <Route path="*" element={<Landing page={'anime'} />} />
       </Routes>
     </Router>
   );
