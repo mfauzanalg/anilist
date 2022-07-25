@@ -11,13 +11,15 @@ const animeCardAttribute = {
   coverImage: 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1-CXtrrkMpJ8Zq.png',
   id: 1,
   isHideDelete: false,
+  collectionName: 'Collection title'
 }
 
 const animeCardAttributeHideDelete = {
   title: 'Anime title',
   coverImage: 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1-CXtrrkMpJ8Zq.png',
   id: 1,
-  isHideDelete: true
+  isHideDelete: true,
+  collectionName: 'Collection title'
 }
 
 const renderComponent = (attribute) => {
@@ -54,7 +56,7 @@ it('Dialog pop up after click remove button with anime name on it', () => {
   renderComponent(animeCardAttribute);
   userEvent.click(screen.queryByTestId('corner-button'))
   expect(screen.getByText('Remove from Collection')).toBeInTheDocument();
-  expect(screen.getByText(`Are you sure want to remove ${animeCardAttribute.title}?`)).toBeInTheDocument();
+  expect(screen.getByText(`Are you sure want to remove ${animeCardAttribute.title} from ${animeCardAttribute.collectionName}?`)).toBeInTheDocument();
 })
 
 
