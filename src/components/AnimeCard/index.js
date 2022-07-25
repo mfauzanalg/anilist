@@ -49,7 +49,7 @@ const AnimeCard = ({ title, coverImage, id, isHideDelete, collectionName }) => {
       {/* Modals */}
       <ConfirmationModal
         title={'Remove from Collection'}
-        text={`Are you sure want to remove ${title}?`}
+        text={`Are you sure want to remove ${title} from ${collectionName}?`}
         open={isOpenDialog}
         setOpen={setIsOpenDialog}
         primaryButtonText={'Remove'}
