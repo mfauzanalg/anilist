@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <br>
+  Anime Collection Project
+  <br>
+  <br>
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Web app to display anime with API from anilist \
+Web app URL: https://anilist-fauzan.netlify.app
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+* React.js
+* Apollo for GQL Client
+* Emotion for CSS in JS
+* Web Storage APIs
+* React Testing Library for Unit and Integration Test
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## How to Run
+1. Clone or download this repository
+2. Open terminal in this project
+3. Run this command to install dependencies
+```
+npm install
+```
+4. Run this command
+```
+npm start
+```
+5. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+6. To run the unit/integration test, use this command
+```
+npm test
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
+Use mobile view for better experience, since this web is mobile-first design \
 
-### `npm test`
+### Anime List Page
+You can see list of Anime
+<div>
+  <img src="./assets/pict/capture1.png" height="400px" />
+  <img src="./assets/pict/capture4.png" height="400px" />
+</div>
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can bulk add anime to the collection
+<div>
+  <img src="./assets/pict/capture2.png" height="400px" />
+  <img src="./assets/pict/capture3.png" height="400px" />
+</div>
+<br />
 
-### `npm run build`
+### Anime Detail Page
+You can see the anime detail info by clicking one of the anime card from the list page \
+From this page you can also see whether the anime is contained in collections or not
+<div>
+  <img src="./assets/pict/capture5.png" height="400px" />
+</div>
+<br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can add anime to collection by clicking add button
+<div>
+  <img src="./assets/pict/capture6.png" height="400px" />
+</div>
+<br/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Collection List Page
+You can see all of the collection on this page
+<div>
+  <img src="./assets/pict/capture7.png" height="400px" />
+</div>
+<br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can remove collection by clicking on the trash icon on the collection card
+<div>
+  <img src="./assets/pict/capture8.png" height="400px" />
+</div>
+<br/>
 
-### `npm run eject`
+You can add collection by clicking the + button
+<div>
+  <img src="./assets/pict/capture9.png" height="400px" />
+</div>
+<br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+You can edit collection by clicking on the pencil icon on the collection card
+<div>
+  <img src="./assets/pict/capture10.png" height="400px" />
+</div>
+<br/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Collection Detail Page
+You can see list of anime that already added to the collection
+<div>
+  <img src="./assets/pict/capture11.png" height="400px" />
+</div>
+<br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+You can remove anime from this collection by clicking x button on the anime card
+<div>
+  <img src="./assets/pict/capture12.png" height="400px" />
+</div>
+<br/>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You can edit collection by clicking the edit collection button
+<div>
+  <img src="./assets/pict/capture13.png" height="400px" />
+</div>
+<br/>
 
-## Learn More
+## Author
+```
+Muhammad Fauzan Al-Ghifari
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
