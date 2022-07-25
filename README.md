@@ -5,12 +5,12 @@
   <br>
 </h1>
 
-## Description
+# Description
 
 Web app to display anime with API from anilist \
 Web app URL: https://anilist-fauzan.netlify.app
 
-## Tech Stack
+# Tech Stack
 
 * React.js
 * Apollo for GQL Client
@@ -18,7 +18,7 @@ Web app URL: https://anilist-fauzan.netlify.app
 * Web Storage APIs
 * React Testing Library for Unit and Integration Test
 
-## How to Run
+# How to Run
 1. Clone or download this repository
 2. Open terminal in this project
 3. Run this command to install dependencies
@@ -35,10 +35,10 @@ npm start
 npm test
 ```
 
-## Features
-Use mobile view for better experience, since this web is mobile-first design \
+# Features
+Use mobile view for better experience, since this web is mobile-first design
 
-### Anime List Page
+## Anime List Page
 You can see list of Anime
 <div>
   <img src="./assets/pict/capture1.png" height="400px" />
@@ -53,7 +53,7 @@ You can bulk add anime to the collection
 </div>
 <br />
 
-### Anime Detail Page
+## Anime Detail Page
 You can see the anime detail info by clicking one of the anime card from the list page \
 From this page you can also see whether the anime is contained in collections or not
 <div>
@@ -67,7 +67,7 @@ You can add anime to collection by clicking add button
 </div>
 <br/>
 
-### Collection List Page
+## Collection List Page
 You can see all of the collection on this page
 <div>
   <img src="./assets/pict/capture7.png" height="400px" />
@@ -92,7 +92,7 @@ You can edit collection by clicking on the pencil icon on the collection card
 </div>
 <br/>
 
-### Collection Detail Page
+## Collection Detail Page
 You can see list of anime that already added to the collection
 <div>
   <img src="./assets/pict/capture11.png" height="400px" />
@@ -111,7 +111,10 @@ You can edit collection by clicking the edit collection button
 </div>
 <br/>
 
-## Author
+## Notes
+All features successfully implemented
+
+### Author
 ```
 Muhammad Fauzan Al-Ghifari
 ```
