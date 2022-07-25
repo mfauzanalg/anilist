@@ -117,7 +117,7 @@ You can edit collection by clicking the edit collection button
 <br/>
 
 ## Notes
-All features successfully implemented
+All features successfully implemented according to specifications
 
 ### Author
 ```
