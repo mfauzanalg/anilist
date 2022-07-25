@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const AnimeCardContainer = styled.div`
-  width: 150px;
+  width: 145px;
   margin: ${props => (props.isHideDelete ? '5px 8px' : '10px 8px')};
   position: relative;
   cursor: pointer;
