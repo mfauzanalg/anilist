@@ -2,10 +2,10 @@
   <br>
   Anime Collection Project
   <br>
+  <br>
   <div align="center">
     <img src="./assets/pict/capture0.png" height="400px" />
   </div>
-  <br/>
 </h1>
 
 
